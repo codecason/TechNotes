@@ -101,6 +101,11 @@ Sentinel 是Raft协议
 publish 发布
 subscribe 订阅
 
+性能、准确度
+redis AOF和RDB的对比
+性能:AOF < RDB
+准确度: AOF > RDB
+可用性: AOF > RDB
 
 References:
     C Standard Library
