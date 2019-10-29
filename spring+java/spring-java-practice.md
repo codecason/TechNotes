@@ -70,61 +70,6 @@ mvn clean package -Dmaven.test.skip=true
 
     框架基础——全面解析Java注解 https://www.cnblogs.com/Qian123/p/5256084.html
 
-#### 微博
-可改进:朋友关系;
-
-测试用例:
-1.异常处理:
-	1.1 Redis
-	redis无法连接
-	redis中无对应数据
-	初始化注册1000个数据
-
-	1.2 MySQL
-    MySQL连接失败;插入数据失败;MySQL断开
-
-	1.3 网页
-	登录页面
-		ajax获取用户ID并获取新头像失败
-		如果用户密码错误,js要知道怎么处理
-		index页面
-		返回404 Not Found页面
-		注册页面
-			注册失败
-		微博发布页面
-	1.4 通用问题
-		redis停止了,**抛出异常**
-
-	1.5 外网无法访问地址
-
-2.性能指标
-	2.1 监控
-
-3.正常功能
-	3.1 注册用户
-	3.2 登录用户
-	3.3 home网页
-	3.4 发布微博
-	3.5 删除微博
-
-4. 高级功能
-4.1 文本搜索
-	Elastic Search
-	查找用户
-	添加用户
-	发布视频
-4.2 发布视频
-
-密码:
-	mouse+666666
-
-
-redis:
-    2.8.0 low version of jedis can not connect new version redis.
-	Linux:
-		redis-server --daemonize yes
-	Windows:
-
 <%
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -159,3 +104,132 @@ AspectJ
     AOP
 
 %>
+
+
+
+
+#### 微博
+可改进:朋友关系;
+
+测试用例:
+1.异常处理:
+	1.1 Redis
+	redis无法连接
+	redis中无对应数据
+	初始化注册1000个数据
+
+	1.2 MySQL
+    MySQL连接失败;插入数据失败;MySQL断开
+
+	1.3 网页
+	登录页面
+		ajax获取用户ID并获取新头像失败
+		如果用户密码错误,js要知道怎么处理
+		index页面
+		返回404 Not Found页面
+		注册页面
+			注册失败
+		微博发布页面
+	1.4 通用问题
+		redis停止了,**抛出异常**
+
+	1.5 
+
+2.性能指标
+	2.1 监控CPU,IO,Disk
+	2.2
+
+3.正常功能
+	3.1 注册用户
+	3.2 登录用户
+	3.3 home网页
+	3.4 发布微博
+	3.5 删除微博
+
+4. 高级功能
+4.1 文本搜索
+	Elastic Search
+	查找用户
+	添加用户
+4.2 发布视频
+
+4.3 后台管理
+    上传文件插入数据库
+	可以配置是否启用redis-server
+
+密码:
+	mouse+666666
+
+redis:
+    2.8.0 low version of jedis can not connect new version redis.
+	Linux:
+		redis-server --daemonize yes
+	Windows:
+
+4.4
+MySQL数据库
+	Date数据
+	比较
+	减法
+
+网页代码高亮
+	prism.js + babel + webpack打包
+	or monaco.js
+安装:
+	npm install --global webpack  --registry=http://r.cnpmjs.org
+
+	npm install --global webpack-cli  --registry=http://r.cnpmjs.org
+webpack
+	entry
+	output
+	babel
+	postcss
+	module处理
+	backbone(plugin)
+	loaders
+安装loader
+	npm install url-loader --save-dev
+配置文件web
+module.exports = {
+	module: {
+		rules: [
+		    {   test:/\.(png|jpg|gif)$/i,
+				use: [
+				{
+				    loader:'url-loader',
+					options: {
+						limit: 8192
+					}
+				}
+				]
+			}
+		]
+	}
+}
+报错,继续安装file-loader
+	> Error: Cannot find module 'file-loader'
+	
+	{
+	  test:/\.m?js$/i,
+	  exclute: /(node_modules|bower_components)/,
+	  use: {
+		loader: "babel-loader",
+		options: {
+		  presents: ['@babel/present-dev']
+		}
+	  }
+	}
+--save是对生产环境所需依赖的声明(开发应用中使用的框架，库),--save-dev是对开发环境所需依赖的声明(构建工具，测试工具)
+CH5.
+babel-loader
+	async await语法糖 ES6
+	jsx语法
+	npm install @babel/plugin-transform-react-jsx -D
+		AMD define
+		less sass loader
+css-loader
+	npm install url-loader --save-dev --registry=http://r.cnpmjs.org
+	monaco https://zhuanlan.zhihu.com/p/47746336
+	webpack.js.org
+	webpack 从入门到工程实践
+	https://www.jianshu.com/p/9349c30a6b3e
