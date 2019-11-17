@@ -31,6 +31,37 @@ Data Types
 - Floating Point
 
 
+#### CH 4 Processor Architecture
+
+RISC处理器
+CPU
+	arm mips
+硬件支持
+	Logic Gates
+	multiplexor
+	register file
+	memory
+#### 4.3 Sequential Y86-64 Implementation
+SEQ
+	1.Fetch
+	2.Decode
+	3.Execute
+	4.Memory
+	5.Write back
+	6.PC Update
+	解析单指令,trace其过程的语法:
+		icode:ifunc M1[PC],
+		其中icode:ifunc是一个字节;M1的下标1表示取一个字节
+		valA,valB,valC,valM:对应register file的端口
+		PC:对应一个寄存器
+	SEQ
+	SEQ+
+
+![CPU flow](fig1.png)
+![CPU flow](fig2.png)
+
+HCL
+
 ----------------------------------------------------------
 
 #### Lab
