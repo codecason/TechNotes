@@ -228,7 +228,19 @@ babel-loader
 		AMD define
 		less sass loader
 css-loader
-	npm install url-loader --save-dev --registry=http://r.cnpmjs.org
+	npm install css-loader --save-dev --registry=http://r.cnpmjs.org
+html-loader
+	npm install html-loader --save-dev --registry=http://r.cnpmjs.org
+
+style-loader:
+	css-loader: 加载.css文件
+	style-loader:使用<style>将css-loader内部样式注入到我们的HTML页面
+	npm install style-loader --save-dev --registry=http://r.cnpmjs.org
+修改style-loader顺序
+	Module build failed (from ./node_modules/css-loader/dist/cjs.js):
+	CssSyntaxError
+修改github
+
 	monaco https://zhuanlan.zhihu.com/p/47746336
 	webpack.js.org
 	webpack 从入门到工程实践
