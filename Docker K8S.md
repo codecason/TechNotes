@@ -115,8 +115,16 @@ deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main
 EOF
 apt-get update
 apt-get install -y kubelet kubeadm kubectl
+systemctl enable kubelet && systemctl start kubelet
 ~~~
 
+~~~
+cat <<EOF >  /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+sysctl --system
+~~~
 SVN
 
     linux 下停止所有的svn服务
@@ -131,3 +139,5 @@ PPA 增删
     sudo add-apt-repository --remove ppa:projectatomic/ppa
 
     [Kubernetes(一) 跟着官方文档从零搭建K8S](https://juejin.im/post/5d7fb46d5188253264365dcf)
+    [快速创建Kubernetes集群](https://help.aliyun.com/document_detail/85903.html?spm=a2c4g.11174283.4.1.17742ceeQ8XKmy)
+    [aliyun 的Kubernetes源](https://developer.aliyun.com/mirror/kubernetes)
