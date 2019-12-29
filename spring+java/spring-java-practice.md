@@ -241,7 +241,9 @@ style-loader:
 	CssSyntaxError
 修改github
 
+#### References
 	monaco https://zhuanlan.zhihu.com/p/47746336
 	webpack.js.org
 	webpack 从入门到工程实践
 	https://www.jianshu.com/p/9349c30a6b3e
+    [Spring Core](https://javabrains.io/courses/spring_core/)
