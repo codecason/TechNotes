@@ -36,22 +36,66 @@ road and rail networks
 
 
 ### Chapter 3. Storage and Retrieval
+#### Database Structure
 哈希索引的两种实现方式
 日志文件格式的数据库方式
 	compaction:去除key
-	crash恢复
-		bitcask
+    	crash恢复 bitcask
 	SSTable和LSM-Tree
-	效率,写放大
+    	效率,写放大
 	LevelDB和RocksDB,Canssandra
-B-Tree索引
-B+树索引
 
+####　Transaction Processing or Analysis
+-   Data Warehousing
+    In-memory Relation Model Database
+-   OLTP for transaction
+    OLAP for analytics, which is data warehousing.
+    Extract-Transform-Load ETL
+    Open Source Data Warehousing:
+        Spark SQL
+        Facebook Presto
+        Impala
+    Commercial Data Warehouse:
+        Teradata
+        Vertica
+        SAP HANA
+-   Stars and Snowflakes
+-   Column-Oriented Storage
+    The difference of Column Database and Document Database
+        列数据库跟文档数据库的区别
+
+-   SIMD for CPU bandwidth optimization
+
+B-树 Index
+B+树 Index
+    update-in-place policy
+Bitmap Index
 
 聚簇索引是什么
 非聚簇索引是什么
 
 MongoDB
 
-
 Bitcask
+### Chapter 4. Encoding and Evolution
+#### Formats for Encoding Data
+    Client Side Apps Upgrade
+
+- Code generation and Dynamically Typed Language
+    Tip: 不加tag(字段序号)的数据编码类型跟动态类型语言有什么关系?
+    动态类型语言常常不需要代码生成
+- Dataflow through services: rpc and REST
+    REST和RPC服务
+    REST不是协议,而是HTTP协议规范
+    RPC is built on top of REST.
+    Futures,or promises,are used to deal with async requests.
+    The reason of using rpc:
+- Message Broker(Message Queue)
+    The reason to use
+  - Actor Model framework samples to handle upgrade rolling
+
+## Part II.Distributed Data
+### Chapter 5. Replication
+    Replication Log
+        Eventual Consistency
+    
