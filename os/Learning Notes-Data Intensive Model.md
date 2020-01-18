@@ -48,8 +48,6 @@ road and rail networks
 ####　Transaction Processing or Analysis
 -   Data Warehousing
     In-memory Relation Model Database
--   OLTP for transaction
-    OLAP for analytics, which is data warehousing.
     Extract-Transform-Load ETL
     Open Source Data Warehousing:
         Spark SQL
@@ -59,7 +57,8 @@ road and rail networks
         Teradata
         Vertica
         SAP HANA
--   Stars and Snowflakes
+-   Features
+        Stars and Snowflakes
 -   Column-Oriented Storage
     The difference of Column Database and Document Database
         列数据库跟文档数据库的区别
@@ -99,3 +98,37 @@ Bitcask
     Replication Log
         Eventual Consistency
     
+Q: Multi-Leader Replication
+    Collaborative Editing
+Q: Concurrency conflict resolving
+
+    Multi-leader Replication Topology
+
+- Leaderless Replication
+Q: Why is it necessary to detect staleness?
+A: To quantify the consistency of the system.
+    Limitations of quorum consistency.
+
+- Multicenter Datacenters
+Q: what will happen if we use the last write wins policy?
+A: It will make it misleading to the clients.
+
+- Write Combing
+Q: What is a tombstone in distributed system?
+A: A marker used for mark deletion.
+
+### Chapter 6. Partition
+- Partition of Key-Value Data
+    Partition by Key Range
+    Partition by Hash of Key
+    Skewed Workloads
+Q: What's the implementation for solving key skewed?
+A: TODO.
+
+- Rebalancing
+
+- Request Routing
+    ZooKeeper
+    
+Cassandra
+    http://www.cs.cornell.edu/Projects/ladis2009/papers/Lakshman-ladis2009.PDF
