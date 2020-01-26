@@ -129,6 +129,51 @@ A: TODO.
 
 - Request Routing
     ZooKeeper
-    
+
+Q: In cloud systems, apps run on different nodes, and they even don't know where is the data saved.How does the partition policy work in this situation?
+A: You need to know the policy of problems.
+
 Cassandra
     http://www.cs.cornell.edu/Projects/ladis2009/papers/Lakshman-ladis2009.PDF
+
+### Chapter 7. Transactions
+#### Concurrency Control
+Q: Is multi-object transactions necessary?
+A: In most cases, it isn't. And considering the difficulties to implement it,what you need to consider is to only adopt normal usages.
+
+Q: What does the circurmstance phantom mean?
+A: TODO.
+
+#### Weak Isolatin Levels
+1. Read Commited (No dirty Read)
+2. Snapshot Isolation (Repeatable Read)
+    MVCC
+3. Preventing Lost Updates
+Ext:
+    Raft
+
+#### Serializability
+1. Actual Serial Execution
+2. Two-Phase Locking (2PL)
+Q: Is 2 Phase Locking good in performance?
+3. Serializable Snapshot Isolation
+    SSI
+Recall: MVCC
+
+predicate lock
+- 1. Index-range locks
+实现方式
+    next-key locking
+    next-key locking = index-range locking
+- 2. pessimistic vs optimistic concurrency control
+
+
+Q: In what situation can we prevent write skew?
+A: SSI
+(write skew: 写偏斜异常, 2个并发事务修改2个不同的对象并形成竞争条件,如扣款判断)
+
+Q: Relation of 2PL, MVCC, index-range locks and next-key locks?
+A: Next-key locking is index-range locking.MVCC is a kind of concurrency control based on multi-version(instead of lock).2-Phase locking has wider range of lock and lower performance thant next-key locking.
+
+Phantom Read: 无意中多了记录
+Solution: MySQL GAP Lock, to prevent insert operation.
