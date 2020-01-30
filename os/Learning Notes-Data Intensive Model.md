@@ -177,3 +177,64 @@ A: Next-key locking is index-range locking.MVCC is a kind of concurrency control
 
 Phantom Read: 无意中多了记录
 Solution: MySQL GAP Lock, to prevent insert operation.
+
+### Chapter 9. Consistency and Consensus
+Linearizability
+    Causality
+    causally consistent
+
+Sequence Number Ordering
+    Lamport timestamp:seq generator consistent with causality
+
+Total Order Broadcast
+    linearizable storage on total order broadcast
+        etcd
+    total order broadcast on linearizable storage
+    Tip: 
+    Total order broadcast and linearizable storage are equivalent to consensus.
+
+#### Consensus:
+    situations:
+    Leader election
+        split brain
+    Atomic commit
+
+    FLP result
+        2-phase commit, 2PC
+            a blocking atomic commit protocol
+            XA C-API
+        ext. consensus algorithms:
+            Zab algorithm, zookeeper
+            Raft algorithm, etcd
+        3-phase commit, 3PC
+    Distributed Transactions in Practice
+
+#### fault-tolerant consensus algorithms
+    - Viewstamped Replication
+    - Paxos
+    - Raft
+    - Zab
+
+#### Zookeeper and Etcd
+Usage
+    allocate work
+    service discovery
+    membership services
+
+### Part III. Derived Data
+#### Chapter 10. Batch Processing
+Command sort in unix systems
+    Unix philosophy
+MapReduce
+    workflow schedulers
+        Oozie, Azkaban, Luigi, Airflow, and Pinball
+    inspires building Lucene search-index.
+
+Beyond MapReduce
+    Influence and Drawbacks
+        High-level models:Pig, Hive, Cascading, Crunch
+    Dataflow engines
+        operators
+    The Pregel processing model
+        
+#### Chapter 11. Stream Processing
