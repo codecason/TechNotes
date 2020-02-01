@@ -1,6 +1,6 @@
 #### 创建型
 - 单例模式
-- 简单工厂模式
+- <del>简单工厂模式(不在23种之中) </del>
 - 工厂方法模式
 - 抽象工厂模式
 - 建造者模式
@@ -15,10 +15,10 @@
 - 备忘录模式 Memento
 - 状态机模式 State
 - 观察者模式 Observer
-- 策略模式   Policy
+- 策略模式   Strategy
 - 访问者模式 Visitor
 - 空对象模式 Empty
-- 模板方法模式 Template
+- 模板方法模式 Template Method
 
 #### 结构型
 - 适配器模式 Adapter
