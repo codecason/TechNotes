@@ -76,6 +76,7 @@ Bitmap Index
 MongoDB
 
 Bitcask
+
 ### Chapter 4. Encoding and Evolution
 #### Formats for Encoding Data
     Client Side Apps Upgrade

