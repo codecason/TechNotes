@@ -6,7 +6,16 @@
 - JSON Model
 - Network Model
 	CODASYL
+    Make querying and updating the database inflexible.
+- The Relational Model
+
 - Graph-Like Data Model
+  - Social graphs
+  - The web graph
+
+- Triple-Stores and SPARQL
+  - SPARQL
+  - Gremlin (Graph query language)
 
 #### 数据库
 New SQL
