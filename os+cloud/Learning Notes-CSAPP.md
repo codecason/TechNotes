@@ -78,12 +78,26 @@ SEQ流程,但不是每个指令都需要走所有步骤
 ![CPU flow](fig1.png)
 ![CPU flow](fig2.png)
 
-HCL
-Y86-64指令:
-    irmovq
-    rrmovq
-	r代表寄存器
-	i立即数
-	m内存
+- HCL
+- Y86-64指令:
+  - irmovq
+  - rrmovq
+  - r代表寄存器
+  - i立即数
+  - m内存
+
+~~~
+4.5.4 Next PC Prediction
+~~~
+- in one case, value read can be speeded up due to less steps for reading.
+- Pipelined execution of using stalls.
+
+1. in some cases, data hazards can unfortunately happen when some program states will be updated and read after some instructions.
+
+2. avoiding hazards by forwarding: send values directly.
+
+3. solve branch prediction error: by add bubble(nop instruction) to stages.
+
+#### 4.5.6 Exception handling
 
 
