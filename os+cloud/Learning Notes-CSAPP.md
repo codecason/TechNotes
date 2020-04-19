@@ -108,3 +108,19 @@ CPI(Cycle Per Instruction)
 ~~~
 Multicycle Instructions
 ~~~
+
+#### CH 5 Optimizing Program Performance
+
+Cycles Per Element: CPE
+to express program performance in iterative programs.
+
+5.10
+Latency,issue times,capacities
+
+unrolling a loop(Mark: deprecated).
+
+program profiling
+
+Amdahl's law
+
+algorithm and data should remain a primary concern in programmers(comparing to compiler optimization and some tricks.)

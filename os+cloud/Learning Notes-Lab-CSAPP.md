@@ -22,12 +22,6 @@ b phase_4
 disas phase_4
 pmap
 pvector
-GDB调试技巧
-	https://blog.csdn.net/transmaple/article/details/48421891
-
-b *0x0000000000400fdf
-简书: https://www.jianshu.com/p/33eb51b2024e
-Postscript file: GDB: Quick reference
 
 打印寄存器
     p $rax
@@ -35,7 +29,7 @@ Postscript file: GDB: Quick reference
 	mov 0x20(%rsp),%rbx 代表赋地址
 	lea 0x20(%rsp),%rbx 代表赋值
 	
-#### lab 3
+#### Lab 3
 
 不可修改的register: rip(除了ret)
 https://www.cnblogs.com/aliflycoris/p/5746143.html
@@ -100,3 +94,17 @@ push $0x08048dbe
 ret
 >>>> shell
 cat dynamite.txt | ./hex2raw | ./bufbomb -u novik
+~~~
+
+#### Lab 4
+
+
+#### References
+GDB调试技巧
+	https://blog.csdn.net/transmaple/article/details/48421891
+
+b *0x0000000000400fdf
+简书: https://www.jianshu.com/p/33eb51b2024e
+Postscript file: GDB: Quick reference
+
+[第三版的相关实验解答和笔记](https://github.com/Exely/CSAPP-Labs)
