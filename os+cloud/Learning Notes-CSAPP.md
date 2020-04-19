@@ -98,6 +98,13 @@ SEQ流程,但不是每个指令都需要走所有步骤
 
 3. solve branch prediction error: by add bubble(nop instruction) to stages.
 
-#### 4.5.6 Exception handling
+~~~
+ 4.5.6 Exception handling
+~~~
+CPI(Cycle Per Instruction)
+=1.0+load penalty+mispredicted branch penalty+return penalty
 
 
+~~~
+Multicycle Instructions
+~~~
