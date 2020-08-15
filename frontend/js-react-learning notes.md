@@ -38,7 +38,11 @@ ES6 迁移
 
 #### Chapter 5
 	组件
-函数式声明
+
+-    函数式声明组件
+        1.没有this  2.没有生命周期方法 3. 不会实例化
+-    类声明组件
+
 ~~~javascript
 	function Welcome(props) {
 		return (
@@ -60,7 +64,7 @@ ES6 迁移
 	}
 ~~~
 无状态组件
-~~~
+~~~tsx
 const Welcome = props => {
     return(
         <div>
@@ -70,6 +74,8 @@ const Welcome = props => {
     );
 }
 ~~~
+
+
 
 #### Chapter 6 props 和state
 
