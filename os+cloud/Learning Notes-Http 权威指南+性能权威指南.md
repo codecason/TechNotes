@@ -70,22 +70,68 @@ opensssl
 
 #### 无线网络性能
 
+### Web性能要点
+### 第10章
+#### 降低延迟的重要性
+    降低延迟比提高带宽有用
 
+### 第11章
+
+http管道,仅在客户端和服务端都在自己控制的情况下推荐使用,如itunes
+
+挂起XHR,Server Sent Event和Websocket会造成占用一个TCP流
 
 #### http 1.0
 
 
-#### http 1.1
+#### http 1.x
+不支持多路复用
 
+### 第12章 http 2.0
+- 类似IO复用的http首部的二进制定义,拆帧和合并帧
+- 多个http请求的并行处理
 
-#### http 2.0
+###　第13章 优化应用交付
 
+- 压缩数据
+    - 怎么压缩? 有什么优化方向?
+
+- 客户端缓存
+    - 什么可以缓存? 什么可以删掉? 有多大的提升? 有哪些具体案例?
+
+- http 1.1和http 2.0的优化策略的变化?
+    - http2不要再打包资源;不要多个连接
+
+- http 2.0在全面部署前也必须依赖https
+
+#### http 3.0
+2020.8
+### 第14章 浏览器API
+xml和XORD(跨域请求访问)
 #### 跨域访问请求
+- Client
+    - Origin域名
+- Server
+    - Allow 域名
+
+#### 流式数据传输选择什么好?
+- XHR: 有时候只支持文本,而且性能差(2014年)
+- Server Sent Event: 支持下载文本和二进制,API规范
+
+### 第17章 Websocket
+- sockjs
+- Socket.IO
+
+### 第18章 WebRTC
+srtp
+rtcp (UNP里有)
 
 ### Q & A
-物联网之间需要TLS吗？
-
+- 物联网之间需要TLS吗？
+- XHR现在支持Stream API吗?为什么要?
 
 ### References
 MDN http doc https://developer.mozilla.org/zh-CN/docs/Web/HTTP
 
+- 其他参考书   http权威指南 + 高性能网站建设指南
+浏览器安全:  The Tangled Web: A Guide to Securing Modern Web Applications
