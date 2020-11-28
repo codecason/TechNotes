@@ -1,12 +1,14 @@
 
 ### https://zhuanlan.zhihu.com/p/82496762
 
+#### 1. 星图的绘制
   stellarium
     开源软件
     例如手机版的Star Walk软件可以指定实时观察星空，电脑版的stellarium可以准确计算天体位置，绘制星空图
 
   伊巴谷参考架  
       Hipparcos Celestial Reference Frame
+      利用类星体的光信息构建的准惯性参考系
 
   ICRF  
       参考架  
@@ -17,6 +19,8 @@
     ICRS参考系  
           https://juliaastro.github.io/ERFA.jl/stable/#ERFA.jl-1  
           https://github.com/liberfa/erfa  
+
+#### 2.
 
 ### Taotie
 
@@ -42,7 +46,18 @@
       ASTRiDE https://github.com/dwkim78/ASTRiDE
     pyradon 
 
+### 11.12 LGalaxies
+    来自上面练手项目, 是多个博士开发的  
+        http://galformod.mpa-garching.mpg.de/public/LGalaxies/
+    项目意义  
+      星系的半分析模型, 黑洞预测和模拟
 
+    项目背景  
+
+    用到的技术  
+
+### 
+  美国天文学教材
 
 Key Result:
     能够根据数据绘制星图  
