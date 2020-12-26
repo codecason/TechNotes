@@ -33,14 +33,15 @@
 	vagrand up
 	vagrant ssh   # 登录镜像, 会发现是vagrant用户
 	vagrant ssh-config
+
+	vagrant box add my-box file:///d:/path/to/file.box
 ~~~
 
-vagrant box add my-box file:///d:/path/to/file.box
 
 6. Vagrant入门教程
 	https://www.sitepoint.com/getting-started-vagrant-windows/
 
-attention:
+	Attention:
 	You can use VirtualBox to see any VMs you’ve created, but you don’t actually have to open or use VirtualBox at all to use Vagrant. If you make certain changes to the VM from VirtualBox, there’s a chance Vagrant could lose the association to the VM.
 
 7. Vagrant UI工具  
@@ -52,4 +53,4 @@ attention:
 	要模拟集群，还是vm workstation好用，不会配网络的时候吧，他不用配，会搞网络吧，才懒得搞
 	链接：https://www.zhihu.com/question/33701295/answer/311275921
 
-Lubuntu是Ubuntu Linux桌面系统计划的一个分支，自从18.10版其默认桌面环境为LXQt，特别适用于配备老旧的电脑。和Xubuntu、Ubuntu Lite一样，都是属于追求轻巧的Ubuntu分支。其特色除了轻巧快速外，并提供极低的包相依性，将因为包相依造成的操作问题减到最低。
+	Lubuntu是Ubuntu Linux桌面系统计划的一个分支，自从18.10版其默认桌面环境为LXQt，特别适用于配备老旧的电脑。和Xubuntu、Ubuntu Lite一样，都是属于追求轻巧的Ubuntu分支。其特色除了轻巧快速外，并提供极低的包相依性，将因为包相依造成的操作问题减到最低。
