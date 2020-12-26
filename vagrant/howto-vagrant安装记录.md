@@ -4,7 +4,7 @@
 
 	**Virtualbox scale up**
 
-		从官网安装VirtualBox; 下载了镜像启动, 可能会不小心进入scale mode, 导致菜单栏不存在; 要么切换回非scale mode, 但同时界面无法放大, 要么在界面中使用Right Ctrl (即Host Key) + Home选择菜单
+	从官网安装VirtualBox; 下载了镜像启动, 可能会不小心进入scale mode, 导致菜单栏不存在; 要么切换回非scale mode, 但同时界面无法放大, 要么在界面中使用Right Ctrl (即Host Key) + Home选择菜单
 
 	**Virtualbox Guest Additions**
 
@@ -31,7 +31,7 @@
 	vagrant box add --name ${name} ./Ubuntu.box  
 	vagrand init ${name}
 	vagrand up
-	vagrant ssh   # 登录镜像, 会发现是
+	vagrant ssh   # 登录镜像, 会发现是vagrant用户
 	vagrant ssh-config
 ~~~
 
