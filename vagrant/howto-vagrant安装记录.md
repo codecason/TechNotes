@@ -54,3 +54,11 @@
 	链接：https://www.zhihu.com/question/33701295/answer/311275921
 
 	Lubuntu是Ubuntu Linux桌面系统计划的一个分支，自从18.10版其默认桌面环境为LXQt，特别适用于配备老旧的电脑。和Xubuntu、Ubuntu Lite一样，都是属于追求轻巧的Ubuntu分支。其特色除了轻巧快速外，并提供极低的包相依性，将因为包相依造成的操作问题减到最低。
+
+8. Vagrant Centos7
+
+9. Vagrant TiDB
+
+	[TiDB 部署及数据同步](https://dudashuang.com/tidb/)
+
+	安装yum or 安装docker
