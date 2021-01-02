@@ -62,3 +62,9 @@
 	[TiDB 部署及数据同步](https://dudashuang.com/tidb/)
 
 	安装yum or 安装docker
+
+实验结果:
+	To connect TiDB: mysql --host 127.0.0.1 --port 4000 -u root
+	To view the dashboard: http://127.0.0.1:2379/dashboard
+	To view the Prometheus: http://127.0.0.1:9090
+	To view the Grafana: http://127.0.0.1:3000
