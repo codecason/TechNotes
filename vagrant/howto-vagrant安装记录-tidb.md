@@ -32,9 +32,11 @@
 	vagrand init ${name}
 	vagrand up
 	vagrant ssh   # 登录镜像, 会发现是vagrant用户
+	vagrant suspend # 休眠
 	vagrant ssh-config
-
+	vagrant halt # 关机
 	vagrant box add my-box file:///d:/path/to/file.box
+	vagrant plugin install vagrant-proxyconf  # 安装代理插件
 ~~~
 
 
@@ -57,7 +59,16 @@
 
 8. Vagrant Centos7
 
-9. Vagrant TiDB
+9. Vagrant NAT Network
+
+	Vagrant默认使用NAT网络,内部git clone的速度非常慢。
+	新增配置项:
+	config.vm.provider "virtualbox" do |vb|
+		vb.customize ["modifyvm", :id, "--nictype1", "virtio"]
+	end
+	https://serverfault.com/questions/495914/vagrant-slow-internet-connection-in-guest/496612
+
+10. Vagrant TiDB
 
 	[TiDB 部署及数据同步](https://dudashuang.com/tidb/)
 
@@ -68,3 +79,8 @@
 	To view the dashboard: http://127.0.0.1:2379/dashboard
 	To view the Prometheus: http://127.0.0.1:9090
 	To view the Grafana: http://127.0.0.1:3000
+
+#### References
+https://juejin.cn/post/6844903862801809415
+https://cloud.tencent.com/developer/article/1585736
+https://github.com/operator-framework/operator-sdk

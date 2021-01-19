@@ -11,3 +11,12 @@ https://dev.mysql.com/doc/index-other.html
 https://github.com/datacharmer/test_db
 %>
 
+#### Mysql的元数据排查
+锁与事务
+select * from information_schema.INNODB_LOCKS;
+
+select * from information_schema.INNODB_LOCK_WAITS;
+
+select * from information_schema.INNODB_TRX;
+
+
