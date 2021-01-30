@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title></title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      class Welcome extends React.Component {
+        constructor() {
+          super();
+          this.state = {
+            name: "World",
+          };
+        }
+        componentWillMount() {
+          //console.log("componentWillMount()");
+        }
+        render() {
+          return <div>Hello,{this.state.name}</div>;
+        }
+      }
+      ReactDOM.render(<Welcome />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
