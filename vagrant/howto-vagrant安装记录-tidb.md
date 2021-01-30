@@ -68,6 +68,16 @@
 	end
 	https://serverfault.com/questions/495914/vagrant-slow-internet-connection-in-guest/496612
 
+	https://superuser.com/questions/850357/how-to-fix-extremely-slow-virtualbox-network-download-speed
+9.1
+	VirtualBox 的典型网络模型：NAT，Hostonly，Bridge以及Internal。
+
+	这些模式的细节我们不再列举。
+
+	借用一张表格来归纳：
+
+	https://www.jianshu.com/p/a1bc23bc7892
+
 10. Vagrant TiDB
 
 	[TiDB 部署及数据同步](https://dudashuang.com/tidb/)
@@ -81,6 +91,9 @@
 	To view the Grafana: http://127.0.0.1:3000
 
 #### References
-https://juejin.cn/post/6844903862801809415
-https://cloud.tencent.com/developer/article/1585736
-https://github.com/operator-framework/operator-sdk
+https://juejin.cn/post/6844903862801809415  
+https://cloud.tencent.com/developer/article/1585736  
+https://github.com/operator-framework/operator-sdk  
+
+#### 一些常用box
+vagrant box add ubuntu/trusty64

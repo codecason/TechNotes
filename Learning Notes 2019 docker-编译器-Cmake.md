@@ -690,3 +690,12 @@ template:
 	set(SOURCE main.cpp)
 	add_executable(${PROJECT_NAME} ${SOURCE})
 	add_definitions("-Wall -g -O0")
+
+
+
+### Make
+打印make过程中的执行命令
+
+make -n xxx  
+make --just-print
+
