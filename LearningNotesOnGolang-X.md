@@ -144,8 +144,16 @@ import "reflect"
 fmt.Println(reflect.TypeOf(m))
 ~~~
 
-#### References
-[Go 入门指南](https://learnku.com/docs/the-way-to-go/build-and-run-go-programs/3576)
-[Go builtin functions](https://golang.org/pkg/builtin/#make)
+#### 常用命令
 
+关于模块管理
+go.mod 文件里的
+replace (
+	A => your_real_module_name
+)
+
+
+#### References
+[Go 入门指南](https://learnku.com/docs/the-way-to-go/build-and-run-go-programs/3576)  
+[Go builtin functions](https://golang.org/pkg/builtin/#make)  
 [Go 语言原本](https://golang.design/under-the-hood/zh-cn/part1basic/ch01basic/)
