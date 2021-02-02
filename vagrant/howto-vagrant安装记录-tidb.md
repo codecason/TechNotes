@@ -32,11 +32,12 @@
 	vagrand init ${name}
 	vagrand up
 	vagrant ssh   # 登录镜像, 会发现是vagrant用户
-	vagrant suspend # 休眠
+	vagrant suspend + resume # 休眠 + 苏醒
 	vagrant ssh-config
 	vagrant halt # 关机
 	vagrant box add my-box file:///d:/path/to/file.box
 	vagrant plugin install vagrant-proxyconf  # 安装代理插件
+	vagrant reload # 重启
 ~~~
 
 
@@ -59,8 +60,9 @@
 
 8. Vagrant Centos7
 
-9. Vagrant NAT Network
+9. Vagrantfile
 
+	**Vagrant Network**
 	Vagrant默认使用NAT网络,内部git clone的速度非常慢。
 	新增配置项:
 	config.vm.provider "virtualbox" do |vb|
@@ -69,7 +71,8 @@
 	https://serverfault.com/questions/495914/vagrant-slow-internet-connection-in-guest/496612
 
 	https://superuser.com/questions/850357/how-to-fix-extremely-slow-virtualbox-network-download-speed
-9.1
+
+- 9.1
 	VirtualBox 的典型网络模型：NAT，Hostonly，Bridge以及Internal。
 
 	这些模式的细节我们不再列举。
@@ -77,6 +80,15 @@
 	借用一张表格来归纳：
 
 	https://www.jianshu.com/p/a1bc23bc7892
+
+- 9.2
+	vagrant配置CPU
+
+~~~ruby
+	config.vm.provider :virtualbox do |vb|
+		vb.cpus = 2
+	end
+~~~
 
 10. Vagrant TiDB
 
