@@ -1,6 +1,6 @@
 ## 2019-05
-模块: 编译器;
 <%
+模块: 编译器  
 ### 编译器
 #### 4. Exercises
 
@@ -47,7 +47,7 @@ ar命令
 我听过他给众多话题做的presentation，简单如LaTeX入门，复杂如paper digest，都给人一种朴素且直击要害的听感，同时又不缺失细节。
 我也见过他写的代码（C++），并在其基础上做过修改。我要说，他的代码非常好理解。有时候只是扫过代码的“形状”就能知道这段代码是用来做什么的。你们要明白，把一个复杂问题化解为一堆小问题并能让你惊叹“原来就是这样啊”，这不是一般的技法。
 
-纪律
+纪律  
 在这里需要强调一下，纪律，或者说时间管理，是一门技术，而并不是什么意志力相关的东西。
 
 他善于拆解大项目，并在每一步都获得反馈，用来评估/计划下一步。
@@ -82,14 +82,15 @@ ar命令
     对于404 not found，这种问题出现的概率非常小，一般都是客户端配置的问题。但是在没有看到你的输出之前，我暂时先不给你提示，以免产生误导。你如果现在无法重现问题，但是将来碰到的话，可以随时联系我们。
 
     对于hash sum mismatch，最常见的是小区宽带缓存造成的（国内也有许多学校部署了类似小区宽带缓存的设备），有少数原因是你使用的镜像服务器配置有问题。如果你现在能重现这个问题，那么请将输出发给我们，我再帮助你进一步确认问题。
-    ---------------------
+~~~
     作者：KISS_Gentoo
     来源：CSDN
     原文：https://blog.csdn.net/u011626066/article/details/40107613
+~~~
 
 3. 安装virtualbox
 
-遇到的问题:
+  遇到的问题:
   共享粘贴板:
   -1  复制粘贴:虚拟机设置-存储-控制器SATA-勾选"使用主机输入输出(I/O)缓存"  
   -2 常规-高级-共享粘贴板修改配置  
@@ -98,14 +99,16 @@ ar命令
   -5 关于3,要知道/media目录是做什么的  
   修改新源:   vi /etc/apt/sources.list
     每一个Ubuntu发布版本都有它的结束时间，通常，Ubuntu发布版本支持18个月，而LTS (Long Term Support)（长期支持）版本分别支持3年(服务器版)和5年(桌面版)。
-  对于那些使用旧版本的Ubuntu的用户，Canonical会维护　old-releases.ubuntu.com　，这是一个过期库的归档。因此，当Canonical支持的Ubuntu过期后，你必须把源切换到 old-releases.ubuntu.com（除非你想在过期前进行升级）。
-  Sol:  sed -i -r 's/([a-z]{2}.)?archive.ubuntu.com/old-releases.ubuntu.com/g'  ./sources.list
-  http://mirrors.ustc.edu.cn/ubuntu-old-releases
+  对于那些使用旧版本的Ubuntu的用户，Canonical会维护　old-releases.ubuntu.com　，这是一个过期库的归档。因此，当Canonical支持的Ubuntu过期后，你必须把源切换到 old-releases.ubuntu.com（除非你想在过期前进行升级）。  
+  Sol:  sed -i -r 's/([a-z]{2}.)?archive.ubuntu.com/old-releases.ubuntu.com/g'  ./sources.list  
+  http://mirrors.ustc.edu.cn/ubuntu-old-releases  
   Sol:  sed -i -r 's/([a-z]{2}.)?archive.ubuntu.com/mirrors.ustc.edu.cn\/ubuntu-old-releases/g'  ./sources.list
 
 5. 安装ssh  
+~~~shell
       apt-get install openssh-server
-  　　sudo /etc/init.d/ssh resart <br>
+  　　sudo /etc/init.d/ssh resart
+~~~
 
 6. 安装docker
   - **Docker ubuntu 16.04 安装稳定版本，社区版版本**
@@ -179,7 +182,7 @@ ar命令
   但是大多数系统上，都会存在多个类似的目录，因此不能简单地根据是否存在相应的配置目录的方式来判断系统的启动方式，这里推荐的方式上是根据init进程号1所对应的可执行文件来判断，如：
 
   systemctl enable docker # 随系统启动  
-  作者：发条蛙
+  作者：发条蛙  
   链接：https://www.jianshu.com/p/43933d125075
 
   大多数问题这里都能找到答案，同时官方的态度是不推荐用户自己添加 ppa 源，出了问题概不负责╮(╯▽╰)╭
@@ -256,10 +259,12 @@ ar命令
 
   你可以选择编辑"/etc/sysconfig/i18n"文件, 但是这个文件是作用于所有用户的,这里我们只修改成自己登录时显示中文。
   在终端中输入命令 vim ~/.bashrc 来编辑“.bashrc”文件, 在最后添加export LANG="zh_CN.UTF-8"。
-
+~~~
 > **docker centos7 容器支持 zh_CN.utf8**
   https://www.jianshu.com/p/1381918fb17e
+
   # 此时需要安装下面的包 ，但是别着急，先看一眼 /etc/yum.conf
+
   # /etc/yum.conf 中有一句话
   override_install_langs=en_US.UTF-8
   # 将其注释掉!!!
@@ -275,7 +280,7 @@ ar命令
   svn co svn://localhost/www /project/wwwTest
   /** TODO: docker 中的svn 端口无法映射, commit Authorization failed
       SOLVED: 修改设置authz,passwd等,注意取消注释**/
-
+~~~
 
 #### Error:
   // Error:
@@ -307,7 +312,8 @@ ar命令
     LVM 是什么?
     根分区 / 必须总是物理地包含 /etc、/bin、/sbin、/lib 和 /dev，否则您将不能启动系统。典型的根分区需要 150–250MB 大小空间。
 
-**Ubuntu 版本的命名规则和开发代号等科普**
+**Ubuntu 版本的命名规则和开发代号等科普**  
+~~~
     uname -r
     uname -a -> 4.2.0-16-generic #19-Ubuntu SMP Thu Oct 8 15:35:06 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
     cat /etc/issue
@@ -319,6 +325,7 @@ ar命令
     sudo apt-cache show docker.io | grep Version <br>
     sudo apt-cache show docker | grep Version
     apt-cache stats
+~~~
 
 **References**
     清华源:     https://mirrors.tuna.tsinghua.edu.cn/help/virtualbox/
