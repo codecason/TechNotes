@@ -108,4 +108,4 @@ https://cloud.tencent.com/developer/article/1585736
 https://github.com/operator-framework/operator-sdk  
 
 #### 一些常用box
-vagrant box add ubuntu/trusty64
+vagrant box add ubuntu/trusty64  
