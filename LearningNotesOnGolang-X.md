@@ -144,6 +144,16 @@ import "reflect"
 fmt.Println(reflect.TypeOf(m))
 ~~~
 
+#### 常用数据结构
+~~~go
+type Interface interface {
+	sort.Interface
+	Push(x interface{})
+	Pop() interface{}
+}
+~~~
+
+
 #### 常用命令
 
 关于模块管理
@@ -156,4 +166,5 @@ replace (
 #### References
 [Go 入门指南](https://learnku.com/docs/the-way-to-go/build-and-run-go-programs/3576)  
 [Go builtin functions](https://golang.org/pkg/builtin/#make)  
-[Go 语言原本](https://golang.design/under-the-hood/zh-cn/part1basic/ch01basic/)
+[Go 语言原本](https://golang.design/under-the-hood/zh-cn/part1basic/ch01basic/)  
+[Go 语言中文网](https://studygolang.com/)
