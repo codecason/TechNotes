@@ -33,7 +33,7 @@ lab-classic
 
 知识点: 1.学习Kubernetes中Service的作用和组成 2.学习如何使用GoSDK来创建Service对象 3.学习如何使用GoSDK来更新Service对象 4.学习如何使用GoSDK来获取Service对象 5.学习如何使用GoSDK来删除Service对象
 
-实验 7
+实验 7  
 开发 Ingress 管理的相关功能
 
 开发 Secret 管理的相关功能
@@ -41,7 +41,7 @@ lab-classic
 开发 Deployment 管理的相关功能
 
 
-https://juejin.im/post/5d7fb46d5188253264365dcf
+https://juejin.im/post/5d7fb46d5188253264365dcf  
 https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 
 sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
@@ -49,14 +49,16 @@ sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
 sudo update-alternatives --set arptables /usr/sbin/arptables-legacy
 sudo update-alternatives --set ebtables /usr/sbin/ebtables-legacy
 
-References:
+#### References:
 实验楼
+~~~
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.23.0/minikube-linux-amd64
 chmod +x minikube && sudo mv minikube /usr/local/bin
 minikube start
 
 curpath=${curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt}
 curl -Lo https://storage.googleapis.com/kubernetes-release/release/$(curpath)/bin/linux/amd64/kubectl
+~~~
 chmod +x kubectl && sudo mv kubectl /usr/local/bin
 kubectl cluster-info
 kubectl get nodes

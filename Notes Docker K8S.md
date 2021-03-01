@@ -146,4 +146,7 @@ Docker 应用遇到的网络问题和配置
     [快速创建Kubernetes集群](https://help.aliyun.com/document_detail/85903.html?spm=a2c4g.11174283.4.1.17742ceeQ8XKmy)
     [aliyun 的Kubernetes源](https://developer.aliyun.com/mirror/kubernetes)
 
-#### Kubernetes
+
+如何从镜像反推Dockerfile
+
+    docker history --format {{.CreatedBy}} --no-trunc=true ImageID/Name
