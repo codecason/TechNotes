@@ -144,6 +144,21 @@ import "reflect"
 fmt.Println(reflect.TypeOf(m))
 ~~~
 
+6. 支持全局初始化 + 分开赋值
+
+~~~go
+// 支持全局初始化
+var pascal = make([][]int, 1, 49)
+func init() {
+	pascal[0] = []int{1}
+	for i := 1; i < 49; i++ {
+		tmp := make([]int, i + 1, i + 1)
+		// 分开赋值
+		tmp[0], tmp[1] = 1, 1
+	}
+}
+~~~
+
 #### 常用数据结构
 ~~~go
 type Interface interface {

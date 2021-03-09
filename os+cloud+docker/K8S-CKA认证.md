@@ -1,6 +1,6 @@
 
-1. 报名链接
-报名链接：https://www.cncf.io/certification/cka/
+1. 报名链接  
+报名链接：https://www.cncf.io/certification/cka/  
          https://www.cncf.io/certification/ckad/
 
 时间:  
@@ -31,6 +31,16 @@ CKAD的考纲
 
 3. 真题
 Github上关于CKAD练习题可以参考CKAD Exercises[10]以及ckad-prep-notes[11]。[4]
+
+4.
+需要环境 K8S集群  
+
+一个笔记本  
+
+能连通外网的虚拟机  
+
+docker国内镜像源  
+
 
 
 #### References

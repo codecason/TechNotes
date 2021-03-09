@@ -32,3 +32,8 @@ Operator 构建于基本的Kubernetes资源和控制器概念之上，并添加�
 
 来源: https://www.operator.org.cn/mongodb-operator
 
+### OAM跟Operator的关系
+
+### KubeVela 跟OAM的关系
+在OAM的基础上,规范的一个定义
+
