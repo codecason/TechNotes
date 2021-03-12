@@ -44,10 +44,12 @@ lab-classic
 https://juejin.im/post/5d7fb46d5188253264365dcf  
 https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 
+~~~
 sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
 sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
 sudo update-alternatives --set arptables /usr/sbin/arptables-legacy
 sudo update-alternatives --set ebtables /usr/sbin/ebtables-legacy
+~~~
 
 #### References:
 实验楼
