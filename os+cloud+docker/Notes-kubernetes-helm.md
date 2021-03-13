@@ -35,8 +35,12 @@ chmod 700 get_helm.sh
 - 实验性功能 - 推送charts到容器镜像
 - Library Chart支持
 
-
 #### 下载 Helm v3
 [下载资源](https://github.com/cloudnativeapp/workshop/tree/master/kubecon2019china/charts/guestbook#installing-helm-v3)
 
 https://github.com/cloudnativeapp/charts
+
+#### 源的管理
+
+怎么安装helm,kubectl,operator-sdk等外网的docker源,避免因为没有对应的源而调度失败?
+
