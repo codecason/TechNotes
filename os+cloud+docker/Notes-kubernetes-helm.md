@@ -44,3 +44,10 @@ https://github.com/cloudnativeapp/charts
 
 怎么安装helm,kubectl,operator-sdk等外网的docker源,避免因为没有对应的源而调度失败?
 
+针对k8s.gcr.io,可以用阿里云的
+
+如k8s.gcr.io/kube-apiserver:v1.20.2
+替换成:
+registry.aliyuncs.com/google_containers/kube-apiserver:v1.20.2
+
+registry.aliyuncs.com/k8s-artifacts-prod/kas-network-proxy/proxy-agent:v0.0.14

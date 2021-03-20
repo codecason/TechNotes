@@ -1,3 +1,4 @@
+
 #### Spark Learning Notes
 DataFrame API 有哪些
 
@@ -10,8 +11,22 @@ org.apache.spark.sql.Dataset<T>
 
 ~~~
 
-~~~java
+两个流处理组件:  
+    Spark Streaming 和 Structured Streaming
 
+#### 案例分析
+~~~java
+rideId
+taxiId
+driverId
+isStart
+startTime
+endTime
+startLon
+startLat
+endLon
+endLat
+passengerCnt
 ~~~
 
 Spark optimized execution engine
@@ -27,3 +42,6 @@ flatMap
 filter
 
 flume, kafka, storm, handoop
+
+#### References
+蔡元楠 geektime learning notes
