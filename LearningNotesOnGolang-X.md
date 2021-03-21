@@ -147,7 +147,6 @@ fmt.Println(reflect.TypeOf(m))
 6. 支持全局初始化 + 分开赋值
 
 ~~~go
-// 支持全局初始化
 var pascal = make([][]int, 1, 49)
 func init() {
 	pascal[0] = []int{1}
@@ -177,6 +176,10 @@ replace (
 	A => your_real_module_name
 )
 
+~~~
+go get的模块管理机制
+
+~~~
 
 #### References
 [Go 入门指南](https://learnku.com/docs/the-way-to-go/build-and-run-go-programs/3576)  
