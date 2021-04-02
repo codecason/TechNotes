@@ -137,3 +137,46 @@ user proxy class type may violate the rules of standard library.
 objects.
 
 - Item 8.  Prefer nullptr to 0 and NULL.
+
+- Item 9. Prefer alias declarations to typedefs.
+
+~~~C++
+using UPtrMap = unique_ptr<map<int, int>>;
+
+// instead of 
+typedef unique_ptr<map<int, int>> UPtrMap;
+
+~~~
+
+~~~C++
+
+template<typename T>
+struct MyAllocList {
+    typedef std::list<T> type;
+};
+
+~~~
+
+- Item 10. Prefer scoped enums to unscoped enums
+
+~~~C++
+
+enum class Color {black, white, red};
+
+// instead of
+enum Color {black, white, red};
+
+// 避免全局名称被污染了
+~~~
+
+### 脚注
+instantiate  
+TMP 模板元编程  
+traits
+std::remove_const<T>::type  
+std::remove_reference<T>::type  
+std::add_lvalue_reference<T>::type  
+std::underlying_type<T>::type
+
+static_cast
+noexcept
