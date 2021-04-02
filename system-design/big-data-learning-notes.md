@@ -43,5 +43,19 @@ filter
 
 flume, kafka, storm, handoop
 
+#### Beam模型
+
+#### WordCount Beam Pipeline
+
+~~~java
+PipelineOptions options = PipelineOptionsFactory.create();
+Pipeline p = Pipeline.create(options);
+
+PCollection<String> words = lines.apply("ExtractWords", FlatMapElements
+        .into(TypeDescriptors.strings())
+        .via((String word) -> Arrays.asList(word.split("[^\\p{L}]+"))));
+~~~
+
+
 #### References
 蔡元楠 geektime learning notes
