@@ -1,4 +1,5 @@
 
+## Virtualbox
 
 1. install on guest addition
 
@@ -15,6 +16,7 @@
 	是指右键盘的Right Ctrl
 	https://www.virtualbox.org/manual/ch04.html#guestadd-intro
 
+## Vagrant
 
 3. **Vagrant源**
 
@@ -77,9 +79,16 @@
 
 	这些模式的细节我们不再列举。
 
-	借用一张表格来归纳：
+借用一张表格来归纳：
 
-	https://www.jianshu.com/p/a1bc23bc7892
+|| NAT	| Bridged	| Internal	| Hostonly |
+| -- | -- | -- | -- | -- |
+|vm -> host	| √	| √	| ×	| × |
+|host -> vm	| ×	| √	| ×	| × |
+|vm -> others hosts	| √	| √	| ×	| × |
+|others hosts => vm	| ×	| √	| ×	| × |
+|vm <-> vm	| ×	| √	| same subnet	| √ |
+(Vagrant (三) - 网络配置 https://www.jianshu.com/p/a1bc23bc7892)
 
 - 9.2
 	vagrant配置CPU
@@ -106,6 +115,9 @@
 https://juejin.cn/post/6844903862801809415  
 https://cloud.tencent.com/developer/article/1585736  
 https://github.com/operator-framework/operator-sdk  
+
+[征服诱人的Vagrant](https://www.huaweicloud.com/articles/0e7b0fe6ca2fc4d60c9fdfaf61e05092.html)
+
 
 #### 一些常用box
 vagrant box add ubuntu/trusty64  
