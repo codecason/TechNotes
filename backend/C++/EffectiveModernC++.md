@@ -169,6 +169,25 @@ enum Color {black, white, red};
 // 避免全局名称被污染了
 ~~~
 
+-  Item 11: Prefer deleted functions to private undefined
+ones.
+
+~~~C++
+template<>
+void processPointer<char>(char*) = delete;
+// reason: can cover the case in which
+// the function has been defined but params are different
+~~~
+
+
+- Item 12. Declare overriding functions override.
+
+在函数最后使用override关键字, 避免重写错误
+
+
+- Item 13. Prefer const_iterators to iterators
+
+
 ### 脚注
 instantiate  
 TMP 模板元编程  
@@ -180,3 +199,16 @@ std::underlying_type<T>::type
 
 static_cast
 noexcept
+
+####
+rvalue举例:
+~~~C++
+...
+    void doWork()&&;
+...
+
+Widget makeWidget(); // function
+
+makeWidget().doWork();  // rvalue call doWork;
+~~~
+
