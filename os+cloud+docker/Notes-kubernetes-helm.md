@@ -57,7 +57,7 @@ registry.aliyuncs.com/k8s-artifacts-prod/kas-network-proxy/proxy-agent:v0.0.14
 ~~~shell
 helm init
 helm create my-hello-world
-heml instal my-app my-hello-world-0.1.0.tgz --set
+helm install my-app my-hello-world-0.1.0.tgz --set
 helm show values kvaps/kubernetes > values.yaml
 
 ~~~
