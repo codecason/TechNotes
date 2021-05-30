@@ -58,18 +58,23 @@
 	要模拟集群，还是vm workstation好用，不会配网络的时候吧，他不用配，会搞网络吧，才懒得搞
 	链接：https://www.zhihu.com/question/33701295/answer/311275921
 
+8. Lubuntu
+
 	Lubuntu是Ubuntu Linux桌面系统计划的一个分支，自从18.10版其默认桌面环境为LXQt，特别适用于配备老旧的电脑。和Xubuntu、Ubuntu Lite一样，都是属于追求轻巧的Ubuntu分支。其特色除了轻巧快速外，并提供极低的包相依性，将因为包相依造成的操作问题减到最低。
 
-8. Vagrant Centos7
 
 9. Vagrantfile
 
 	**Vagrant Network**
 	Vagrant默认使用NAT网络,内部git clone的速度非常慢。
+
 	新增配置项:
+~~~
 	config.vm.provider "virtualbox" do |vb|
 		vb.customize ["modifyvm", :id, "--nictype1", "virtio"]
 	end
+~~~
+
 	https://serverfault.com/questions/495914/vagrant-slow-internet-connection-in-guest/496612
 
 	https://superuser.com/questions/850357/how-to-fix-extremely-slow-virtualbox-network-download-speed
