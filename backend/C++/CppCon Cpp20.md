@@ -159,6 +159,20 @@ template <typename T>
 struct generator {
     // code ...
 };
+
+// in c++ 20
+export module generator;
+template <typename T>
+export struct generator {
+    // code ...
+};
+
+struct helper {
+    // code ...
+};
+
 ~~~
+BMI Binary module interface
+
 
 [CppCon ](https://www.bilibili.com/video/BV1kV411h78u?from=search&seid=368482001852892295)
