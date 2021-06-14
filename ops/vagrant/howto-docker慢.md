@@ -12,3 +12,14 @@ wget https://archive.apache.org/dist/spark/spark-2.4.3/spark-2.4.3-bin-hadoop2.7
 
 ~~~
 
+### 配置云加速
+~~~
+
+~~~
+
+在 /etc/docker/daemon.json
+
+{
+  "registry-mirrors": ["https://reg-mirror.qiniu.com"],
+}
+
