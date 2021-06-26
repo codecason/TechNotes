@@ -245,7 +245,6 @@ public:
 ### Chapter 3  Smart Pointers
 raw pointer and smart pointers
 
-如何知道一个指针是dangling的?
 ~~~C++
 
 std::auto_ptr
@@ -268,7 +267,84 @@ make_shared 会创建一个control block, 并返回对应的shared_ptr
 引用计数器和对象不在一起
 - Item 20: Use std::weak_ptr for shared-ptr, like pointers that dangle.
 
+- Item 21. Prefer std::make_unique and std::make_shared to direct use of new.
 
+减少new的重复代码
+~~~C++
+auto spw1(std:make_shared<Widget>());
+
+std::shared_ptr<Widget> spw2(new Widget);
+
+~~~
+
+处理exception更加安全, 在初始化的时候如果用new; 可能会因为一个对象初始化的参数顺序不确定(取决于编译器), 抛出异常, 指针未释放, 导致资源泄露
+
+但是: make_shared不支持自定义deleter, 所以make_shared不一定要用
+
+效率问题:
+
+~~~C++
+// version 1
+class ReallyBigType {...}
+auto pBigObj = std::make_shared<ReallyBigType>();
+
+// version 2
+std::shared_ptr<ReallyBigType> pBigObj(new ReallyBigType)
+~~~
+
+- Item 22. When using the Pimpl Idiom, define special member functions in the implementation file.
+对于类成员里的其他类的unique_ptr, 在头文件里要增加成员函数(析构函数, ), 在实现文件里增加实现 (???)
+
+只能用在unique_ptr, 不能用在shared_ptr
+
+### Chapter 5. Rvalue References, Move Semantics, and Perfect Forwarding
+- Item 23. Understand std::move and std::forward
+~~~c++
+对于
+void foo(A a) {
+  // ...
+}
+void func(A&& a) {
+  // ...
+  foo(a);
+}
+
+// 上面的代码对于a, 会执行一次拷贝构造
+// 此时我们可以使用 std::forward<T>() 这个函数. std::forward 与 std::move 的区别是，move 会无条件的将一个参数转换成右值, 而 forward 则会保留参数的左右值类型. 因此上面例子中 func 的 forward 版本可以写为
+
+void func(A&& a) 
+{
+    // ...
+    foo(std::forward<A>(a)); // 将参数 a 依照类型 A 进行转发
+}
+~~~
+
+移动语义的本质
+~~~c++
+template<typename _Tp>
+  constexpr typename std::remove_reference<_Tp>::type&&
+  move(_Tp&& __t) noexcept
+  { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+~~~
+
+- Item 24. Distinguish universal references from rvalue references.
+
+- Item 25. Use std::move on rvalue references, std::forward on universal references.
+
+- Item 26. Avoid overloading on universal references.
+
+- Item 27. Familiarize yourself with alternatives to overloading on universal references.
+
+- Item 28: Understand reference collapsing.
+引用省略
+
+不支持编译reference to reference, 但是支持根据单个reference的写法表示出两个reference
+
+- Item 29: Assume that move operations are not present, not cheap, and not used.
+
+- Item 30: Familiarize yourself with perfect forwarding failure cases.
+
+### Item 6.
 
 ### 脚注
 instantiate  
@@ -285,6 +361,12 @@ noexcept
 decltype
 
 std::forward<T>(params...)
+
+perfect forward: parentheses
+如何知道一个指针是dangling的?
+
+pimpl: Pointer to implementation
+
 
 ####
 rvalue举例:
