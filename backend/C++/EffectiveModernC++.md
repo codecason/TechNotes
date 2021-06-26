@@ -187,6 +187,88 @@ void processPointer<char>(char*) = delete;
 
 - Item 13. Prefer const_iterators to iterators
 
+- Item 14. Declare functions noexcept if they won't emit exceptions
+
+~~~c++
+
+~~~
+在编译阶段强制约束一个函数必须是noexcept的,防止一些场景(如stl vector的push_back操作执行move优化)下
+使用了可能导致except的函数; 另外是为了优化性能,这样编译器不会对其进行插入异常处理代码的操作
+
+- Item 15. Use constexpr whenever possible
+~~~c++
+constexpr
+int pow(int base, int exp) noexcept
+{
+
+}
+
+constexpr auto numConds = 5;
+std::array<int, pow(3, numConds)> result;
+~~~
+
+- Item 16. Make const member functions thread safe
+~~~c++
+class Polynomial {
+public:
+    using RootsType = std::vector<double>;
+    RootsType roots() const
+    {
+        std::lock_guard<std::mutex> g(m);
+        if (!rootsAreValid) {
+            rootsAreValid = true;
+        }
+        // ...
+        return rootVals;
+    }
+private:
+    mutable std::mutex m;
+    mutable bool rootsAreValid{false};
+    mutable RootsType rootVals{};
+};
+~~~
+atomic 关键字的用法和禁忌
+
+- Item 17. Understand special member function generation
+~~~c++
+class Base {
+public:
+    virtual ~Base() = default; // make dtor virtual
+    Base(Base&&) = default; // support moving
+    Base& operator=(Base&&) = default;
+    Base(const Base&) = default; // support copying
+    Base& operator=(const Base&) = default;
+}
+~~~
+
+
+### Chapter 3  Smart Pointers
+raw pointer and smart pointers
+
+如何知道一个指针是dangling的?
+~~~C++
+
+std::auto_ptr
+
+std::weak_ptr
+std::unique_ptr
+std::shared_ptr
+~~~
+
+pitfall 陷阱
+- Item 18: Use std::unique_ptr for exclusive-ownership resource management.
+
+- Item 19: Use std::shared_ptr for shared-ownership resource management.
+
+shared_ptr<T> = Ptr to T (T Object) + Ptr to Control Block (
+    Reference Count, Weak Count, custom deleter, allocator, etc)
+
+make_shared 会创建一个control block, 并返回对应的shared_ptr
+
+引用计数器和对象不在一起
+- Item 20: Use std::weak_ptr for shared-ptr, like pointers that dangle.
+
+
 
 ### 脚注
 instantiate  
@@ -199,6 +281,10 @@ std::underlying_type<T>::type
 
 static_cast
 noexcept
+
+decltype
+
+std::forward<T>(params...)
 
 ####
 rvalue举例:
