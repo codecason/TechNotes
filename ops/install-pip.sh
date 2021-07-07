@@ -7,3 +7,4 @@ trusted-host=pypi.tuna.tsinghua.edu.cn  # 这个也是根据pypi源自己定义
 
 # 指定源下载
 python3 -m pip install -i https://mirrors.cloud.tencent.com/pypi/simple taichi
+pip install -i https://mirrors.cloud.tencent.com/pypi/simple taichi
