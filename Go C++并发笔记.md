@@ -54,6 +54,16 @@ pthread_cancel 取消线程
 条件变量:
     生产者, 消费者问题
 
+~~~Go常见问题
 WaitGroup
+    wg := sync.WaitGroup()
 
-    
+goroutine 和 channel 的关系
+
+waitgroup和mutex
+
+sync.Done()
+
+mutex
+
+~~~
