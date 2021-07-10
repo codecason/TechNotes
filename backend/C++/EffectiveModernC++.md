@@ -344,7 +344,7 @@ template<typename _Tp>
 
 - Item 30: Familiarize yourself with perfect forwarding failure cases.
 
-### Item 6.
+### Item 7. The Concurrency API
 
 ### 脚注
 instantiate  
@@ -367,6 +367,7 @@ perfect forward: parentheses
 
 pimpl: Pointer to implementation
 
+std::async
 
 ####
 rvalue举例:
