@@ -21,3 +21,6 @@ pacman -S mingw-w64-x86_64-pkg-config
 
 #### 或者安装codeblocks
 codeblocks IDE 自带 mingw 安装包
+
+#### 
+pacman -R mingw-w64-x86_64-gcc && pacman -R mingw-w64-x86_64-cmake && pacman -R mingw-w64-x86_64-make && pacman -R mingw-w64-x86_64-pkg-config
