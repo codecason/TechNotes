@@ -19,6 +19,7 @@ select * from information_schema.INNODB_LOCK_WAITS;
 
 select * from information_schema.INNODB_TRX;
 
+[姜承尧MySQL课程](https://kaiwu.lagou.com/course/courseInfo.htm?courseId=869#/detail/pc?id=7317)
 
 #### 复习MySQL
 
@@ -66,4 +67,31 @@ MVCC
 TPC-H 是美国交易处理效能委员会( TPC：Transaction Processing Performance Council ) 组织制定的，用来模拟决策支持类应用的一个测试集的规范定义，其模拟的就是一个类似电商业务，看一下其对核心业务表 rders 的设计：
 
 
-[姜承尧MySQL课程](https://kaiwu.lagou.com/course/courseInfo.htm?courseId=869#/detail/pc?id=7317)
+#### 11. 索引执行
+
+索引的选择是基于开销计算的,MySQL存储引擎会根据其先验知识判断数据查询的开销。在一些情况下,执行器能够分析出较好的结果,但是对于不同的数据分布,尤其是数据倾斜,可能会分析错误。
+针对数据倾斜,可以使用直方图(即可选值的记录统计)来提前计算数据的分布,让MySQL有可以分析的正确依据
+
+~~~sql
+ANALYZE TABLE orders 
+UPDATE HISTOGRAM ON o_orderstatus;  # 或其他字段
+~~~
+
+索引计算的过程记录
+~~~sql
+EXPLAIN FORMAT=json 
+SELECT o_custkey,SUM(o_totalprice)   # 或其他的语句
+FROM orders GROUP BY o_custkey;
+~~~
+
+#### 12. JOIN 查询
+
+nested loop join
+
+    驱动表
+
+hash join算法
+
+回表,二级索引
+
+
