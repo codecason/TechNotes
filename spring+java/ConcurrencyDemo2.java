@@ -7,6 +7,7 @@ class ConcurrencyDemo2 extends Thread {
     public void run() {
         long count=0;
         while (keepRunning) {
+            // System.out.println("Thread terminated."); //这里print了则内存也可能被刷新,运行仍然是正常的
             count++;
         }
 
