@@ -17,3 +17,17 @@ C++ 虚函数这是面试初、中级 C ++ 职位一个概率 95%以上的面试
 
     m会在每个类D所继承的表中占有自己独立的内存空间(不会被覆盖);
     D对象中会把继承得到的非虚函数的成员都放到最后; 不会互相覆盖, 它们会各自维护一个变量;
+
+纯虚函数:
+    virtual function that is required to be implemented by a derived class if the derived class is not abstract. 是一个为了强制继承者必须实现的语法特性
+
+虚继承:  
+    将自己的成员变量直接拷贝到派生类(也就是上面菱形继承所说的问题)
+
+参考:  
+    https://pabloariasal.github.io/2017/06/10/understanding-virtual-tables/
+
+#### Section II.
+
+#### 补充
+新内容移动到universe_practice
