@@ -117,11 +117,14 @@ relay_log_info_repository = TABLE
 
 锁:
     什么是next-key locking  
+    什么是gap-lock  
 
 高性能:  
     MVCC  
 
 分布式事务:
+    2PC  
+    XA
 
 集群:
     主从复制崩溃了怎么恢复  
