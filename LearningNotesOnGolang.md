@@ -83,7 +83,39 @@ func main() {
 ~~~
 
 ~~~go
+// 循环中使用go协程
+for _, peer := range peers {
+    go func() {
+        fmt.Printf("%v", peer)
+    }()
+}
+~~~
+
+#### 使用Context同步信号 [3]
+context.Context 的使用方法和设计原理 — 多个 Goroutine 同时订阅 ctx.Done() 管道中的消息，一旦接收到取消信号就立刻停止当前正在执行的工作。
+
+~~~go
+func main() {
+    ctx, cancel := context.WithTimeout(context.Background(), 1 * time.Second)
+    defer cancel()
+    go handle(ctx, 500 * time.Millisecond)
+    select {
+        case <- ctx.Done():  // 这里订阅, 如果挂了就停止
+            fmt.Println("main", ctx.Err())
+    }
+}
+
+func handle(ctx context.Context, duration time.Duration) {
+    select {
+        case <- ctx.Done():  // 这里订阅
+            fmt.Println("handle", ctx.Err())
+        case <- time.After(duration):
+            fmt.Println("process request with", duration)
+    }
+}
+
 ~~~
 
 [Go Preemptive Scheduler Design]()
 [GPM模型](https://www.cnblogs.com/X-knight/p/11365929.html)
+[Go 语言设计与实现](https://draveness.me/golang/docs)
