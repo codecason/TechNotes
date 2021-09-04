@@ -62,6 +62,34 @@
 
 	Lubuntu是Ubuntu Linux桌面系统计划的一个分支，自从18.10版其默认桌面环境为LXQt，特别适用于配备老旧的电脑。和Xubuntu、Ubuntu Lite一样，都是属于追求轻巧的Ubuntu分支。其特色除了轻巧快速外，并提供极低的包相依性，将因为包相依造成的操作问题减到最低。
 
+## Vagrant创建虚拟机
+https://juejin.cn/post/6844903862801809415
+
+#### 登录SSH/配置密钥
+查看配置文件
+
+vagrant && vagrant ssh-config
+```
+Host default
+  HostName 127.0.0.1
+  User vagrant
+  Port 2222
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile D:/my-projects/ubuntu/.vagrant/machines/default/virtualbox/private_key
+  IdentitiesOnly yes
+  LogLevel FATAL
+```
+
+open xshell and input the private key  
+after login, su root  
+vi /etc/ssh/sshd_config and change PermitRootLogin to yes
+systemctl restart sshd   -- [2]
+
+
+
+## Vagrant TiDB
 
 9. Vagrantfile
 
@@ -93,7 +121,6 @@
 |vm -> others hosts	| √	| √	| ×	| × |
 |others hosts => vm	| ×	| √	| ×	| × |
 |vm <-> vm	| ×	| √	| same subnet	| √ |
-(Vagrant (三) - 网络配置 https://www.jianshu.com/p/a1bc23bc7892)
 
 - 9.2
 	vagrant配置CPU
@@ -107,14 +134,35 @@
 10. Vagrant TiDB
 
 	[TiDB 部署及数据同步](https://dudashuang.com/tidb/)
-
-	安装yum or 安装docker
+	tiup playground  
+	安装yum or 安装docker  
 
 实验结果:  
 	To connect TiDB: mysql --host 127.0.0.1 --port 4000 -u root
 	To view the dashboard: http://127.0.0.1:2379/dashboard
 	To view the Prometheus: http://127.0.0.1:9090
 	To view the Grafana: http://127.0.0.1:3000
+
+## 迁移box
+如何迁移已经有的box到另外一个盘(例如默认的C盘已经满了,要移到D盘)?
+1. 修改VAGRANT_HOME环境变量,移动.vagrant.d(这个好像没啥用?)  
+2. 修改virtualbox的默认路径(这个是为了后续新建的box能在新的路径建立), File->General->Default Machine Folder,
+改为 D:\VirtualBox VMs(举例)
+3. 参考 [Vagrant盘迁移], 主要是停机、拷贝目录, 修改存量配置的目录, 其中关于.VirtualBox/VirtualBox.xml的修改为关键,将目录改掉就可以了
+~~~xml
+<MachineRegistry>
+ <MachineEntry uuid="{vagrant_vm_uuid}" src="d:\[path]\.VirtualBoxVagrantVMs\[vagrant_vm_name]\[vagrant_vm_name].vbox"/>
+<MachineEntry uuid="{vagrant_vm2_uuid}" src="d:\[path]\.VirtualBoxVagrantVMs\[vagrant_vm2_name]\[vagrant_vm2_name].vbox"/>
+
+<MachineEntry uuid="{other_vm_uuid}" src="C:\Users\[username]\.docker\machine\machines\default\default\default.vbox"/>
+</MachineRegistry>
+~~~
+## 一些常用box
+vagrant box add ubuntu/trusty64  
+
+## FAQ
+If you create a private box, only you (the owner) and collaborators will be able to access it.
+
 
 #### References
 https://juejin.cn/post/6844903862801809415  
@@ -123,6 +171,8 @@ https://github.com/operator-framework/operator-sdk
 
 [征服诱人的Vagrant](https://www.huaweicloud.com/articles/0e7b0fe6ca2fc4d60c9fdfaf61e05092.html)
 
+[1][Vagrant (三) - 网络配置](https://www.jianshu.com/p/a1bc23bc7892)
+[2] https://www.programmersought.com/article/25075868899/
+[3] [capistrano - How to find the Vagrant IP? - Stack Overflow](https://stackoverflow.com/questions/14870900/how-to-find-the-vagrant-ip)
 
-#### 一些常用box
-vagrant box add ubuntu/trusty64  
+[4][Vagrant盘迁移](https://medium.com/@cedricdue/moving-vagrant-boxes-and-related-virtualbox-vms-to-another-drive-f1d7c50d20bc)
