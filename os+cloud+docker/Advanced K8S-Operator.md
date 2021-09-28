@@ -1,6 +1,4 @@
 https://github.com/operator-framework/operator-sdk
-Operator的存在意义
-
 
 ## Operators 介绍
 将运维知识应用到软件中。

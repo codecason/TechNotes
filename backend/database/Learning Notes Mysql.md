@@ -1,23 +1,3 @@
-## 2019.
-<%
-### MySQL 技术内幕: InnoDB存储引擎
-
-1.3.2
-    
-1.3.3
-AdventureWorks
-下载示例数据库 dev.mysql.com/doc
-https://dev.mysql.com/doc/index-other.html
-https://github.com/datacharmer/test_db
-%>
-
-#### Mysql的元数据排查
-锁与事务
-select * from information_schema.INNODB_LOCKS;
-
-select * from information_schema.INNODB_LOCK_WAITS;
-
-select * from information_schema.INNODB_TRX;
 
 [姜承尧MySQL课程](https://kaiwu.lagou.com/course/courseInfo.htm?courseId=869#/detail/pc?id=7317)
 
@@ -162,6 +142,62 @@ mysqldump -A --single-transaction > backup.sql
 
 
 #### 25. 分布式数据库架构选型: 分库分表 or 中间件
+
+#### 26. 分布式设计之禅: 全链路的条带化设计
+
+条带化  
+
+根据分片键进行分片打散, 形成新的分片  
+
+以订单服务为例, 订单根据ID在服务层就做了分片
+
+跨机房多活架构跟条带化改造  
+
+弊端: 增加复杂性; 跨机房增加时延; 备份切换的复杂性;
+
+
+#### 27. 分布式事务: 我们到底要不要使用2PC?
+背景:  
+    在两个表中关联的数据因为不是分布在同一个机器上的，如何执行分布式事务?  
+
+2PC  
+两阶段提交: Prepare + Commit  
+
+```XA Recover命令```
+    XA两段提交事务的人为处理  
+
+```柔性事务```
+    最终一致性  的事务补偿机制,适合现实中的海量业务请求  
+    TCC、 SAGA、 SEATA框架
+
+#### 28. MySQL 数据库开发规范
+```表设计规范```  
+    INT类型使用非unsigned  
+    字符集使用utf8mb4  
+    日期类型用datetime  
+    JSON存储非结构化数据,典型场景为用户标签  
+    要有主键  
+
+```索引设计规范```
+    索引覆盖技术提升查询效率  
+    MySQL JOIN 支持 NLJ（Nested Loop Join）和 NHJ（Nested Hash Join）
+
+    分区表的唯一场景: 需要定期清理历史数据
+    金融业务使用 MGR  
+
+```分布式架构设计的 10 个规范```
+
+##### 29. 如何优雅地删除生产环境中的大表
+大表删除在海量数据的互联网中是一个常见的场景
+
+在 MySQL 5.5.23 版本前，当删除一张表时，会去遍历 BP（Buffer Pool 缓冲池）中所有该表对应的页，这时需要持有 BP 的互斥锁，```对于 BP 的访问都需要持有该锁才能继续。```
+
+后来的版本将该锁拆分成更小的锁,优化了性能。
+
+#### 30. 历史数据库系统：不可或缺的迁移系统
+DTS 是 Data Transfer Service，数据迁移服务
+
+业界的 DTS 有 Maxwell、Canal
 
 
 #### FAQ

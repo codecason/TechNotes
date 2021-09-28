@@ -13,6 +13,12 @@ ssh密钥能连通虚拟机, 但是密码连通失败 (卡住了)
         ipconfig /renew  
     参考:   https://www.zhihu.com/question/21512577
 
+睡眠模式之后重启无法打开网页
+    在设备管理器里修改电源管理,禁止允许关闭适配器以节省电源  --没啥用
+	https://www.tenforums.com/network-sharing/170800-ethernet-slow-connect-after-sleep-reboot.html  
+	https://superuser.com/questions/889297/issues-with-internet-after-sleep-mode  
+
+    看是不是安装sangfor VPN或其他会影响网络的软件了(根据注册表和服务判断)  --有用
 
 Reference
 #### 浏览器网页加载不全
