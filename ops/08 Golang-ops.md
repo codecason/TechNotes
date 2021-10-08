@@ -29,3 +29,34 @@ go版本升级
 部署
 
 发布module
+
+#### golang
+dlv-dap
+
+
+#### golang 常见命令
+~~~
+# help
+go help get
+
+## in project/
+go build  
+
+## in project/src/
+go get -u # u: use the network(which default does not use so not latest)
+go get -dv ./...
+
+# For packages
+
+go build   # builds your package then discards the results.
+go install # builds then installs the package in your $GOPATH/pkg directory.
+
+
+go build ./...  # build the package in the current folder and all pakcages recursively.
+go get -d -v ./...  # discard install; v: verbose of get; ./...: 
+
+## auto clean unuse module (by code analysis)
+go init mod modname
+go mod tidy
+
+~~~
