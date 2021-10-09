@@ -59,4 +59,6 @@ go get -d -v ./...  # discard install; v: verbose of get; ./...:
 go init mod modname
 go mod tidy
 
+go vendor
+
 ~~~
