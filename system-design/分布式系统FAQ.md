@@ -23,5 +23,29 @@ Kafka不能处理这种需求, 尽管topic内单partition可以解决, 但是性
 
 5. 如何解决持久化文件数据在单机存储的单点问题?
 
-6. 
+6. CAP理论
+
+分区容忍性
+
+7. BASE理论
+
+
+BigTable的实现: HBase
+
+Spanner的实现: TiDB
+
+BASE理论:
+Basically Available  
+
+Soft State  
+
+Eventually Consistency  
+
+AP: dynamo, Cassandra
+
+CP: etcd、HBase、redis
+
+CA: SQL Server, MariaDB
+
+8. DHT、一致性哈希、memached、负载均衡
 
