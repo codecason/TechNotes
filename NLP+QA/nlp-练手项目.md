@@ -178,5 +178,5 @@ thunlp/THUTag, 用多种方法 实现了多种关键词/短语抽取和社会标
 
 #### References
 
-[](https://zhuanlan.zhihu.com/p/51279338)
+[练手|常见30种NLP任务的练手项目](https://zhuanlan.zhihu.com/p/51279338)
 [拿到字节算法岗offer经验分享](https://zhuanlan.zhihu.com/p/397244153)
