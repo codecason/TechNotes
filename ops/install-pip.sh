@@ -1,3 +1,4 @@
+# Ubuntu
 apt install python-pip
 mkdir -p ~/.pip
 echo "[global]
