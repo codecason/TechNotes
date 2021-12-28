@@ -181,8 +181,15 @@ go get的模块管理机制
 
 ~~~
 
+#### 怎么控制goroutine的数目
+用channel
+
+#### 
+
+
 #### References
 [Go 入门指南](https://learnku.com/docs/the-way-to-go/build-and-run-go-programs/3576)  
 [Go builtin functions](https://golang.org/pkg/builtin/#make)  
 [Go 语言原本](https://golang.design/under-the-hood/zh-cn/part1basic/ch01basic/)  
-[Go 语言中文网](https://studygolang.com/)
+[个人博客-Go 并发控制](https://fafucoder.github.io/2021/11/09/golang-goroutine-count/)
+[Go语言设计与实现](https://draveness.me/golang/)

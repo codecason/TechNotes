@@ -49,3 +49,7 @@ CA: SQL Server, MariaDB
 
 8. DHT、一致性哈希、memached、负载均衡
 
+
+#### References
+
+[系统面试题精选](https://soulmachine.gitbooks.io/system-design/content/cn/)

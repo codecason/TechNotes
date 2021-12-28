@@ -1,4 +1,4 @@
-
+1. 
 go的低版本拉不到一些镜像的问题:
 
     export GO111MODULE=on (1.14版本后可以默认支持,之前的话需要export)
@@ -12,6 +12,7 @@ go的低版本拉不到一些镜像的问题:
     export GOPRIVATE=
 ~~~
 
+2.
 package xxx is not in GOROOT  
     export GO111MODULE=on  
     go mod init `mod_name`  
@@ -19,11 +20,11 @@ package xxx is not in GOROOT
     或者
     This package requires go v1.16, please upgrade your go version or use the appropriate docker builder.
 
-go版本升级  
+3. go版本升级  
     sudo apt-get purge golang*
     rm -rf /usr/local/go
 
-打包
+4. 打包
     写Makefile,makefile里的命令是 go build -X "xxx" -o dest ./main.go
 
 部署
@@ -62,3 +63,8 @@ go mod tidy
 go vendor
 
 ~~~
+
+### go 调试工具
+#### go devle
+
+go get -u github.com/derekparker/delve/cmd/dlv
