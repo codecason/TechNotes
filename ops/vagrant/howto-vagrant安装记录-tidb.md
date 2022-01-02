@@ -29,19 +29,6 @@
 5. 手动导入vagrant镜像  
 	https://stackoverflow.com/questions/22065698/how-to-add-a-downloaded-box-file-to-vagrant
 
-~~~shell
-	vagrant box add --name ${name} ./Ubuntu.box  
-	vagrand init ${name}
-	vagrand up
-	vagrant ssh   # 登录镜像, 会发现是vagrant用户
-	vagrant suspend + resume # 休眠 + 苏醒
-	vagrant ssh-config
-	vagrant halt # 关机
-	vagrant box add my-box file:///d:/path/to/file.box
-	vagrant plugin install vagrant-proxyconf  # 安装代理插件
-	vagrant reload # 重启
-~~~
-
 
 6. Vagrant入门教程
 	https://www.sitepoint.com/getting-started-vagrant-windows/
@@ -58,12 +45,8 @@
 	要模拟集群，还是vm workstation好用，不会配网络的时候吧，他不用配，会搞网络吧，才懒得搞
 	链接：https://www.zhihu.com/question/33701295/answer/311275921
 
-8. Lubuntu
-
-	Lubuntu是Ubuntu Linux桌面系统计划的一个分支，自从18.10版其默认桌面环境为LXQt，特别适用于配备老旧的电脑。和Xubuntu、Ubuntu Lite一样，都是属于追求轻巧的Ubuntu分支。其特色除了轻巧快速外，并提供极低的包相依性，将因为包相依造成的操作问题减到最低。
-
 ## Vagrant创建虚拟机
-https://juejin.cn/post/6844903862801809415
+[Windows下傻瓜Vagrant+VirtualBox快速创建centos7虚拟机](https://juejin.cn/post/6844903862801809415)
 
 #### 登录SSH/配置密钥
 查看配置文件
@@ -87,13 +70,31 @@ after login, su root
 vi /etc/ssh/sshd_config and change PermitRootLogin to yes
 systemctl restart sshd   -- [2]
 
+8. Vagrant常用命令
+~~~shell
+vagrant global-status #
+vagrant destroy <id> #
 
+vagrant plugin install vagrant-proxyconf
+
+	vagrant box add --name ${name} ./Ubuntu.box  
+	vagrant init ${name}
+	vagrant up
+	vagrant ssh   # 登录镜像, 会发现是vagrant用户
+	vagrant suspend + resume # 休眠 + 苏醒
+	vagrant ssh-config
+	vagrant halt # 关机
+	vagrant box add my-box file:///d:/path/to/file.box
+	vagrant plugin install vagrant-proxyconf  # 安装代理插件
+	vagrant reload # 重启
+~~~
 
 ## Vagrant TiDB
 
 9. Vagrantfile
 
-	**Vagrant Network**
+**Vagrant网络加速1**
+
 	Vagrant默认使用NAT网络,内部git clone的速度非常慢。
 
 	新增配置项:
@@ -103,14 +104,24 @@ systemctl restart sshd   -- [2]
 	end
 ~~~
 
-	https://serverfault.com/questions/495914/vagrant-slow-internet-connection-in-guest/496612
+[StackOverflow: Vagrant: Slow internet connection in guest](https://serverfault.com/questions/495914/vagrant-slow-internet-connection-in-guest/496612)  
+[How to fix extremely slow Virtualbox network download speed?](https://superuser.com/questions/850357/how-to-fix-extremely-slow-virtualbox-network-download-speed)
 
-	https://superuser.com/questions/850357/how-to-fix-extremely-slow-virtualbox-network-download-speed
+**Vagrant网络加速2 如何使用宿主机代理**
 
-- 9.1
-	VirtualBox 的典型网络模型：NAT，Hostonly，Bridge以及Internal。
+```shell
+# 在 ~/.bash_profile配置
+export http_proxy=http://192.168.1.xxx:xxxx
+export https_proxy=http://192.168.1.xxx:xxxx  (http://是否要+s根据实际代理软件确定)  
+# 同时代理软件需要允许LAN的连接
 
-	这些模式的细节我们不再列举。
+```
+
+- 9.1 VirtualBox 的典型网络模型  
+
+NAT，Hostonly，Bridge以及Internal。
+
+这些模式的细节我们不再列举。
 
 借用一张表格来归纳：
 
@@ -133,9 +144,9 @@ systemctl restart sshd   -- [2]
 
 10. Vagrant TiDB
 
-	[TiDB 部署及数据同步](https://dudashuang.com/tidb/)
-	tiup playground  
-	安装yum or 安装docker  
+[TiDB 部署及数据同步](https://dudashuang.com/tidb/)  
+tiup playground  
+安装yum or 安装docker  
 
 实验结果:  
 	To connect TiDB: mysql --host 127.0.0.1 --port 4000 -u root
@@ -143,8 +154,10 @@ systemctl restart sshd   -- [2]
 	To view the Prometheus: http://127.0.0.1:9090
 	To view the Grafana: http://127.0.0.1:3000
 
-## 迁移box
+11. 迁移box
+
 如何迁移已经有的box到另外一个盘(例如默认的C盘已经满了,要移到D盘)?
+
 1. 修改VAGRANT_HOME环境变量,移动.vagrant.d(这个好像没啥用?)  
 2. 修改virtualbox的默认路径(这个是为了后续新建的box能在新的路径建立), File->General->Default Machine Folder,
 改为 D:\VirtualBox VMs(举例)
@@ -157,6 +170,7 @@ systemctl restart sshd   -- [2]
 <MachineEntry uuid="{other_vm_uuid}" src="C:\Users\[username]\.docker\machine\machines\default\default\default.vbox"/>
 </MachineRegistry>
 ~~~
+
 ## 一些常用box
 vagrant box add ubuntu/trusty64  
 
@@ -171,8 +185,8 @@ https://github.com/operator-framework/operator-sdk
 
 [征服诱人的Vagrant](https://www.huaweicloud.com/articles/0e7b0fe6ca2fc4d60c9fdfaf61e05092.html)
 
-[1][Vagrant (三) - 网络配置](https://www.jianshu.com/p/a1bc23bc7892)
-[2] https://www.programmersought.com/article/25075868899/
-[3] [capistrano - How to find the Vagrant IP? - Stack Overflow](https://stackoverflow.com/questions/14870900/how-to-find-the-vagrant-ip)
+[1][Vagrant (三) - 网络配置](https://www.jianshu.com/p/a1bc23bc7892)  
+[2] https://www.programmersought.com/article/25075868899/  
+[3] [capistrano - How to find the Vagrant IP? - Stack Overflow](https://stackoverflow.com/questions/14870900/how-to-find-the-vagrant-ip)  
 
 [4][Vagrant盘迁移](https://medium.com/@cedricdue/moving-vagrant-boxes-and-related-virtualbox-vms-to-another-drive-f1d7c50d20bc)
