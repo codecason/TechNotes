@@ -45,9 +45,6 @@
 	要模拟集群，还是vm workstation好用，不会配网络的时候吧，他不用配，会搞网络吧，才懒得搞
 	链接：https://www.zhihu.com/question/33701295/answer/311275921
 
-## Vagrant创建虚拟机
-[Windows下傻瓜Vagrant+VirtualBox快速创建centos7虚拟机](https://juejin.cn/post/6844903862801809415)
-
 #### 登录SSH/配置密钥
 查看配置文件
 
@@ -179,14 +176,11 @@ If you create a private box, only you (the owner) and collaborators will be able
 
 
 #### References
-https://juejin.cn/post/6844903862801809415  
-https://cloud.tencent.com/developer/article/1585736  
-https://github.com/operator-framework/operator-sdk  
-
-[征服诱人的Vagrant](https://www.huaweicloud.com/articles/0e7b0fe6ca2fc4d60c9fdfaf61e05092.html)
 
 [1][Vagrant (三) - 网络配置](https://www.jianshu.com/p/a1bc23bc7892)  
 [2] https://www.programmersought.com/article/25075868899/  
 [3] [capistrano - How to find the Vagrant IP? - Stack Overflow](https://stackoverflow.com/questions/14870900/how-to-find-the-vagrant-ip)  
-
-[4][Vagrant盘迁移](https://medium.com/@cedricdue/moving-vagrant-boxes-and-related-virtualbox-vms-to-another-drive-f1d7c50d20bc)
+[4][Vagrant盘迁移](https://medium.com/@cedricdue/moving-vagrant-boxes-and-related-virtualbox-vms-to-another-drive-f1d7c50d20bc)  
+[5][征服诱人的Vagrant](https://www.huaweicloud.com/articles/0e7b0fe6ca2fc4d60c9fdfaf61e05092.html)  
+[6][腾讯云-Vagrant快速入门教程](https://cloud.tencent.com/developer/article/1585736)  
+[7][Windows下傻瓜Vagrant+VirtualBox快速创建centos7虚拟机](https://juejin.cn/post/6844903862801809415)  
