@@ -2,7 +2,8 @@
 apt install python-pip
 mkdir -p ~/.pip
 echo "[global]
-index-url = https://pypi.tuna.tsinghua.edu.cn/simple/ #这个pypi源自己定义[install]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple/ #这个pypi源自己定义
+[install]
 trusted-host=pypi.tuna.tsinghua.edu.cn  # 这个也是根据pypi源自己定义
 " > ~/.pip/pip.conf
 
@@ -21,3 +22,10 @@ http://dblab.xmu.edu.cn/blog/1709-2/
 
 https://juejin.cn/post/6844904184752373768
 
+
+# Windows 下
+echo "[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple/ #这个pypi源自己定义
+[install]
+trusted-host=pypi.tuna.tsinghua.edu.cn  # 这个也是根据pypi源自己定义
+" > ~/.pip/pip.ini

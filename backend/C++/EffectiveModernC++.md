@@ -329,6 +329,33 @@ template<typename _Tp>
 
 - Item 24. Distinguish universal references from rvalue references.
 
+区分universal reference和右值引用  
+
+~~~C++
+1. 模板参数中的参数是T&&时是universal reference;
+template<typename T>
+void f(T&& param);
+但是如果是const T&&, 则是rvalue reference  
+2. 如果某个值不需要type deduction,那么是rvalue reference
+template<class T, class Allocator = allocator<T>>
+class vector {
+public:
+	void push_back(T&& x);
+	// ...
+};
+
+但是有type deduction, 也不一定是rvalue reference,形式需要是跟T直接相关的类型推导,
+而不能是
+template<typename T>
+void f(vector<T>&& params)这样params的类型推导(当f被调用时,T被自动推导,除非T已经显式声明)  
+
+
+3.
+
+~~~
+
+即使形式上是右值引用, 也可能是普通的左值引用
+
 - Item 25. Use std::move on rvalue references, std::forward on universal references.
 
 - Item 26. Avoid overloading on universal references.
@@ -344,7 +371,66 @@ template<typename _Tp>
 
 - Item 30: Familiarize yourself with perfect forwarding failure cases.
 
-### Item 7. The Concurrency API
+### Chapter 7. The Concurrency API
+- Item 35. Prefere task-based programming to thread-based.
+~~~c++
+
+int doAsyncWork();
+std::thread t(doAsyncWork);
+auto fut = std::async(doAsyncWork); // 这个比线程的写法好
+task-based的程序
+
+~~~
+
+State-of-the-art thread schedulers employ system-wide thread pools to avoid over‐
+subscription, and they improve load balancing across hardware cores through workstealing algorithms.
+
+thread-schedulers: 线程调度器  通过work-stealing算法  实现
+
+- Item 36: Specify std::launch::async if asynchronicity is essential.
+如果是异步的, 用async显式声明
+~~~c++
+auto fut2 = std::async(std::launch::async | // run f either
+                       std::launch::deferred, // async or
+                       f);
+~~~
+std::launch::async:   
+std::launch::deferred: will terminate when wait or get is called.  
+
+??? 存疑
+
+- Item 37: Make std::threads unjoinable on all paths.
+
+joinable: 可运行或正在运行的线程  
+unjoinable: 不可join的线程  
+
+joinable的线程
+thread.detach方法
+~~~c++
+
+class ThreadRAII {
+public:
+    enum class DtorAction { join, detach };
+    ThreadRAII(std::thread&& t, DtorAction a): action(a), t(std::move(t)) {}
+
+    ~ThreadRAII()
+    {
+        if (t.joinable()) {
+            if (action == DtorAction::join) {
+                t.join();
+            } else {
+                t.detach();
+            }
+        }
+    }
+
+};
+
+~~~
+
+- Item 38: Be aware of varying thread handle destructor behavior.
+Future destructors 只会析构future变量自己的数据
+
 
 ### 脚注
 instantiate  
@@ -361,6 +447,8 @@ noexcept
 decltype
 
 std::forward<T>(params...)
+
+std::forward<decltype(func)>(func)
 
 perfect forward: parentheses
 如何知道一个指针是dangling的?
