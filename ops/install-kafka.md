@@ -15,7 +15,9 @@ sudo /opt/zookeeper/bin/zkServer.sh start
 
 
 # 3. install kafka
-curl https://downloads.apache.org/kafka/2.6.2/kafka_2.13-2.6.2.tgz -o ./kafka-2.13.tgz
+
+<!-- curl https://downloads.apache.org/kafka/2.6.2/kafka_2.13-2.6.2.tgz -o ./kafka-2.13.tgz -->
+curl https://archive.apache.org/dist/kafka/2.6.2/kafka_2.13-2.6.2.tgz -o ./kafka-2.13.tgz  
 mkdir kafka && tar -xzf kafka-2.13.tgz -C kafka
 cd kafka
 sudo ./bin/kafka-server-start.sh -daemon config/server.properties
