@@ -1,4 +1,6 @@
-# install zookeeper
+# 1. install java
+
+# 2. install zookeeper
 # login as a normal user with sudo privilege
 wget https://course-public-resources-1252758970.cos.ap-chengdu.myqcloud.com/PracticalApplication/202001bigdata/9-kafka/apache-zookeeper-3.5.6-bin.tar.gz
 
@@ -8,10 +10,11 @@ tar -zxf apache-zookeeper-3.5.6-bin.tar.gz -C /opt/zookeeper
 echo "export ZK_HOME=/opt/zookeeper" >> /etc/profile && 
 echo "export PATH=$ZK_HOME/bin:$PATH" >> /etc/profile
 source /etc/profile
+cd /opt/zookeeper/conf && cp zoo_sample.cfg ./zoo.cfg
 sudo /opt/zookeeper/bin/zkServer.sh start
 
 
-# install kafka
+# 3. install kafka
 curl https://downloads.apache.org/kafka/2.6.2/kafka_2.13-2.6.2.tgz -o ./kafka-2.13.tgz
 mkdir kafka && tar -xzf kafka-2.13.tgz -C kafka
 cd kafka
