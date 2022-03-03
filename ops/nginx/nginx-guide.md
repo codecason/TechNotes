@@ -40,6 +40,24 @@ nginx配置中没有server_name会怎样？
 #### nginx 最全操作
 [Nginx 最全操作总结 腾讯技术](https://zhuanlan.zhihu.com/p/384752564)
 
+#### nginx 匹配精确度
+~~~
+server {
+    listen      8082;
+    server_name localhost;
+
+    location ^~ /foobar/ {
+        echo "WITH: /";
+    }
+
+    location ^~ /foobar {
+        echo "WITHOUT: /";
+    }
+}
+~~~
+
+在location里, 后缀加了/的是更加精确的匹配, 而 /foobar还会匹配/foobar123, 但是优先级低
+
 #### QA
 server_name _; 的作用
 
