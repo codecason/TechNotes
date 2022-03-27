@@ -67,3 +67,6 @@ server_name _; 的作用
 
     listen 80 default;
 
+
+#### rewrite里的last和break
+rewrite可以作为location和server里的参数
