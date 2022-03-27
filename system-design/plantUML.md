@@ -68,6 +68,18 @@ graph TD;
 
 ```mermaid
 sequenceDiagram
+
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+
     小程序 ->> 小程序 : wx.login()获取code
     小程序 ->> + 服务器 : wx.request()发送code
     服务器 ->> + 微信服务器 : code+appid+secret
@@ -75,3 +87,4 @@ sequenceDiagram
     服务器 ->> 服务器 : 根据openid确定用户并生成token
     服务器 -->> - 小程序 : token
 ```
+[Markdown 基于 Mermaid 的时序图、流程图和甘特图](https://juejin.cn/post/6847902221137346573)
