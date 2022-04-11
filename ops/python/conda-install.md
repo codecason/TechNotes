@@ -1,6 +1,7 @@
 #### 配置文件
 ~/.condarc  
 
+
 修改channels:  
 envs  
 pkgs  
@@ -49,3 +50,6 @@ conda create -n myenv scipy=0.15.0
 #### channel
 
 channel
+
+Then I found that torchvision should be installed together with pytorch in anaconda.
+conda install -c pytorch torchvision
