@@ -20,3 +20,16 @@ Change url from git@ to:
 url = https://github.com/username/repo.git
 
 3.
+2022.3
+
+错误: ```SSH-RSA key rejected with message "no mutual signature algorithm"```
+
+需要增加如下配置项
+
+	PreferredAuthentications publickey
+	HostKeyAlgorithms +ssh-rsa
+	PubkeyAcceptedKeyTypes +ssh-rsa
+
+
+[SSH-RSA key permission deined](https://confluence.atlassian.com/bitbucketserverkb/ssh-rsa-key-rejected-with-message-no-mutual-signature-algorithm-1026057701.html)
+
