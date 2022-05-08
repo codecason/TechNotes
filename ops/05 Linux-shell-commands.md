@@ -8,6 +8,8 @@ usermod,groupmod
     delete a group  
         groupdel groupname  
 
+    list all groups
+    list all users
     add a user  
         useradd david -u 544
     list members of a group  

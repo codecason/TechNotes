@@ -7,6 +7,12 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple/ #这个pypi源自己定义
 trusted-host=pypi.tuna.tsinghua.edu.cn  # 这个也是根据pypi源自己定义
 " > ~/.pip/pip.conf
 
+# Centos
+
+centos安装python要安装依赖,除此之外如果安装jupyter的时候有问题, 可能要看/usr/include/python3.6m 目录是否有pyconfig.h(会有报错提示); 如果没有, yum search python36 | grep devel
+	yum install python36-sip-devel.x86_64  
+
+
 # 指定源下载
 python3 -m pip install -i https://mirrors.cloud.tencent.com/pypi/simple taichi
 pip install -i https://mirrors.cloud.tencent.com/pypi/simple taichi
