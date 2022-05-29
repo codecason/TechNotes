@@ -9,3 +9,12 @@
 
 
 https://nga.178.com/read.php?&tid=27069263&pid=522014504&to=1
+
+
+
+#### Q1. 启用hyper-v
+dism.exe /Online /Enable-Feature:Microsoft-Hyper-V /All
+[enable hyper-v](https://stackoverflow.com/questions/39684974/docker-for-windows-error-hardware-assisted-virtualization-and-data-execution-p)
+
+#### Q2. 怎么配置docker的registry
+%programdata%\docker\config\daemon.json
