@@ -1,16 +1,11 @@
 经常有人问我：老大让我完成xxx，我不会，他也不会，但是很着急。这个任务怎么实现啊？这个任务需要什么技术啊？这种情况我遇到有100+次了，而且很多时候问得问题跟具体需要的技术简直是驴唇不对马嘴。所以今天整理了常见的30种NLP任务非常适合练手的Project，我觉得有俩作用：研究+练手，加深理解，做到更专业；收藏起来，以备不时之需，不敢保证涵盖工业界所有NLP业务场景，但是涵盖95+%以上是完全没问题的。
 
 
-
-还有一个原因，马上周末了，我发现大部分人周五晚上开始到周一上午都不看技术相关的内容，今天本来不打算发，但是被催更，那就发点不用过多思考的实践类的吧。如果精力充沛或是单身，最好周末还是保持学习状态，毕竟技术是无止境的，真的需要积累。
-
-
-
 首先声明下，今天发的这些Project都是类似论文实现那样的demo级的，也不是传统的工程实现，用的方法一般比工业界的高端，非常适合练手用。
 
 
 
-1.分词 Word Segmentation
+1.分词 Word Segmentation [X]
 
 [chqiwang/convseg](https://github.com/chqiwang/convseg) ，基于CNN做中文分词，提供数据和代码。
 
@@ -18,74 +13,73 @@
 
 
 
-2.词预测 Word Prediction
+2.词预测 Word Prediction [X]
 
 [Kyubyong/word_prediction](https://github.com/Kyubyong/word_prediction) ，基于CNN做词预测，提供数据和代码。
 
 
 
-3. 文本蕴涵 Textual Entailment
+3. 文本蕴涵 Textual Entailment [X]
 
-[Steven-Hewitt/Entailment-with-Tensorflow](https://link.zhihu.com/?target=https%3A//github.com/Steven-Hewitt/Entailment-with-Tensorflow)，基于Tensorflow做文本蕴涵，提供数据和代码。
+[Steven-Hewitt/Entailment-with-Tensorflow](https://github.com/Steven-Hewitt/Entailment-with-Tensorflow)，基于Tensorflow做文本蕴涵，提供数据和代码。
 
 
 
 4. 语音识别 Automatic Speech Recognition
 
-[buriburisuri/speech-to-text-wavenet](https://link.zhihu.com/?target=https%3A//github.com/buriburisuri/speech-to-text-wavenet)，基于DeepMind WaveNet和Tensorflow做句子级语音识别。
+[buriburisuri/speech-to-text-wavenet](https://github.com/buriburisuri/speech-to-text-wavenet)，基于DeepMind WaveNet和Tensorflow做句子级语音识别。
 
 
 5. 自动摘要 Automatic Summarisation
 
-[PKULCWM/PKUSUMSUM ](https://link.zhihu.com/?target=https%3A//github.com/PKULCWM/PKUSUMSUM)，北大万小军老师团队的自动摘要方法汇总，包含了他们大量paper的实现，支持单文档摘要、多文档摘要、topic-focused多文档摘要。
+[PKULCWM/PKUSUMSUM ](https://github.com/PKULCWM/PKUSUMSUM)，北大万小军老师团队的自动摘要方法汇总，包含了他们大量paper的实现，支持单文档摘要、多文档摘要、topic-focused多文档摘要。
 
 
+6. 文本纠错 Text Correction
 
-6. 文本纠错 Text Correct
-
-[atpaino/deep-text-corrector](https://link.zhihu.com/?target=https%3A//github.com/cmusphinx/g2p-seq2seq)，基于深度学习做文本纠错，提供数据和代码。
+[atpaino/deep-text-corrector](https://github.com/cmusphinx/g2p-seq2seq)，基于深度学习做文本纠错，提供数据和代码。
 
 
 
 7.字音转换 Grapheme to Phoneme
 
-[cmusphinx/g2p-seq2seq](https://link.zhihu.com/?target=https%3A//github.com/cmusphinx/g2p-seq2seq)，基于网红transformer做， 提供数据和代码。
+[cmusphinx/g2p-seq2seq](https://github.com/cmusphinx/g2p-seq2seq)，基于网红transformer做， 提供数据和代码。
 
 
 
 8. 复述检测 Paraphrase Detection 和 问答 Question Answering
 
-[Paraphrase-Driven Learning for Open Question Answering](https://link.zhihu.com/?target=http%3A//knowitall.cs.washington.edu/paralex/)， 基于复述驱动学习的开放域问答。
+[Paraphrase-Driven Learning for Open Question Answering](http://knowitall.cs.washington.edu/paralex/)， 基于复述驱动学习的开放域问答。
 
 
 
 9. 音汉互译 Pinyin-To-Chinese
 
-[Kyubyong/neural_chinese_transliterator](https://link.zhihu.com/?target=https%3A//github.com/Kyubyong/neural_chinese_transliterator)，基于CNN做音汉互译。
+[Kyubyong/neural_chinese_transliterator](https://github.com/Kyubyong/neural_chinese_transliterator)，基于CNN做音汉互译。
 
 
 
 10. 情感分析 Sentiment Analysis
 
-情感分析包括的内容太多了，目前没发现比较全的。推荐两个适合练手的吧：[Deeply Moving: Deep Learning for Sentiment Analysis](https://link.zhihu.com/?target=https%3A//nlp.stanford.edu/sentiment/)，http://sentic.net/about/。
+情感分析包括的内容太多了，目前没发现比较全的。推荐两个适合练手的吧：[Deeply Moving: Deep Learning for Sentiment Analysis](https://nlp.stanford.edu/sentiment/)，http://sentic.net/about/。
 
 
 
 11. 手语识别 Sign Language Recognition
 
-[Home - SignAll](https://link.zhihu.com/?target=http%3A//www.signall.us/)， 该项目在手语识别做的非常成熟。
+[Home - SignAll](http://www.signall.us/)， 该项目在手语识别做的非常成熟。
 
 
 
 12. 词性标注（POS）、 命名实体识别（NER）、 句法分析（parser）、 语义角色标注（SRL） 等。
 
-[HIT-SCIR/ltp](https://link.zhihu.com/?target=http%3A//www.signall.us/)， 包括代码、模型、数据，还有详细的文档，而且效果还很好。
+[HIT-SCIR/ltp](http://www.signall.us/)， 包括代码、模型、数据，还有详细的文档，而且效果还很好。
 
 
 
 13. 词干 Word Stemming
 
-[snowballstem/snowball](https://link.zhihu.com/?target=https%3A//github.com/snowballstem/snowball)， 实现的词干效果还不错。
+[snowballstem/snowball](https://github.com/snowballstem/snowball)， 实现的词干效果还不错。
 
 
 
