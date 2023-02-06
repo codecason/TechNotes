@@ -12,3 +12,19 @@ Virtual Media Manager
 Remove the file (highlighted yellow) from Hard disks tab.  
 2.
 之后在Settings-Storage修改文件
+
+### 2. 网络配置
+```
+Host-Only
+Internal
+Bridged
+```
+
+重装Virtualbox
+
+不同网络配置
+
+https://www.cnblogs.com/bakari/p/10592421.html
+### 其他
+
+#### Reference
