@@ -1,0 +1,7 @@
+cmake不用写，从组里的仓库clone一份，然后要用啥库一行fetch content gitlab一把梭。字节腾讯这些用blade 谷歌用bazel都差不多。有识之士推一下xmake吧
+
+blade, bazel, xmake 编译方式
+folly库构建脚本
+
+clion, rider
+百万行，千万行c++用VS很有必要。100万行以下小项目随便用哪个都行。

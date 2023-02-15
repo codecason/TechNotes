@@ -431,6 +431,9 @@ public:
 - Item 38: Be aware of varying thread handle destructor behavior.
 Future destructors 只会析构future变量自己的数据
 
+返回变量应该放于何处?  
+  不能放在callee的promise;  
+  不能放在caller的future, 因为可能有future的拷贝 shared_future  
 
 ### 脚注
 instantiate  

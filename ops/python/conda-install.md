@@ -1,3 +1,16 @@
+# install
+## Linux
+~~~bash
+wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+bash Miniconda3-latest-Linux-x86_64.sh
+source ~/.bashrc
+~~~
+
+[Ref](https://zhuanlan.zhihu.com/p/489499097)
+
+## Windows
+
 
 # conda install
 . ~/miniconda3/etc/profile.d/conda.sh

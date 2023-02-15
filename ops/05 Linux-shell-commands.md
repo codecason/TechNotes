@@ -3,10 +3,13 @@
 useradd,groupadd
 usermod,groupmod
 
+## 增删组
 add a group  
     groupadd -g <gid> groupname  
 delete a group  
     groupdel groupname  
+
+## 查询用户, 组
 
 # list all groups for current user
     groups  
@@ -19,6 +22,7 @@ delete a group
     -d: : delimiter
     --fields : LIST
 
+## 2. 增加用户
 # add a user  
     useradd david -u 544
     useradd <username> -u <userid>
@@ -27,24 +31,29 @@ delete a group
 # user -> groups: list groups for a user  
     groups username
 
+## 3. 修改用户
 # change a user from a group to another  
-    -g primary group  
-    -G group
-
     usermod -g maingroup username
-    usermod -G groupname username  
+    usermod -G groupname username 
 
+注: -g primary group  
+    -G group  
 # add an existing user to group:
     usermod -aG groupname username
+    e.g. sudo usermod -aG sudo foo   #将用户foo添加到sudo组中，以获取root权限
 
-# 2. 怎么添加用户
+## 4. 怎么添加用户到组
 # add password for a user:
     useradd -aG <group> <username>
     passwd root
     > id root
     output: uid=0(root) gid=0(root) groups=0(root)
+
+## 5. 删除
 # delete a user
     userdel -u <username>
+
+
 ~~~
 
 #### 测试io
