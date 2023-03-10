@@ -11,13 +11,14 @@ source ~/.bashrc
 
 ## Windows
 
-
 # conda install
 . ~/miniconda3/etc/profile.d/conda.sh
 
-
-# 怎么查询conda的路径
+# 查询conda已安装的环境
 conda info --envs
+
+#### 删除环境
+conda remove --name <env_name> --all
 
 #### 修改conda的文件安装目录
 [condarc](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html)
@@ -68,3 +69,13 @@ conda install -c pytorch torchvision
 
 一般在bat脚本前加入 call conda activate base即可
 
+#### conda install -c 的debug
+如果solving problem很慢，用--debug查看日志即可
+
+
+#### [Python] 安装当前目录
+pip install -e .
+
+Is used to install a Python package locally in "editable" mode.
+
+#### 删除env

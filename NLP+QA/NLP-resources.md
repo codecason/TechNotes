@@ -37,6 +37,9 @@ pslite，horovod等分布式框架
 SQL 基础教程  
 大数据技术原理与应用 林子雨  
 Spark快速大数据分析 朱尔斯  
+GIS
+NBA
+安全、金融、法律、Aminer数据集
 
 ~~~
 注: Greenplum ClickHouse等技术不提
