@@ -1,6 +1,6 @@
 Mongodb跟普通数据库的区别
 
-![](./pic/mongodb.png)
+![](./img/mongodb.png)
 
 ~~~mql
 // fruit: setname
