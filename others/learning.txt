@@ -12,5 +12,4 @@ eae2a468f
 complex_filter
 defer
 only
-docker-hub.server.com/from-fpub-pkg/elonxiao/flask-elon:v1.16
 
