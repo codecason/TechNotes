@@ -37,7 +37,7 @@
 
 6. 文本纠错 Text Correction
 
-[atpaino/deep-text-corrector](https://github.com/cmusphinx/g2p-seq2seq)，基于深度学习做文本纠错，提供数据和代码。
+[atpaino/deep-text-corrector](https://github.com/atpaino/deep-text-corrector)，基于深度学习做文本纠错，提供数据和代码。
 
 
 
@@ -73,7 +73,7 @@
 
 12. 词性标注（POS）、 命名实体识别（NER）、 句法分析（parser）、 语义角色标注（SRL） 等。
 
-[HIT-SCIR/ltp](http://www.signall.us/)， 包括代码、模型、数据，还有详细的文档，而且效果还很好。
+[HIT-SCIR/ltp](https://github.com/HIT-SCIR/ltp)， 包括代码、模型、数据，还有详细的文档，而且效果还很好。
 
 
 
@@ -85,7 +85,7 @@
 
 14. 语言识别 Language Identification
 
-[https://github.com/saffsd/langid.py](https://github.com/https://github.com/saffsd/langid.py)，语言识别比较好的开源工具。
+[saffsd/langid](https://github.com/saffsd/langid.py)，语言识别比较好的开源工具。
 
 
 
