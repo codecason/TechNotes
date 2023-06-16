@@ -41,12 +41,18 @@ GIS
 NBA
 安全、金融、法律、Aminer数据集
 
-~~~
-注: Greenplum ClickHouse等技术不提
-平台有Hue、Presto
-~~~
 
 [Foundations of Statistical Natural Language Processing](https://nlp.stanford.edu/fsnlp/intro/)
 
 #### Reference
 [作为一名算法工程师应该掌握哪些大数据技术？](https://www.zhihu.com/question/547148412/answer/2615821328)
+
+反向语义生成
+
+文本摘要  
+
+NER: 命名实体识别  
+
+词典(像deepai)  
+
+检索引擎(像magi)

@@ -1,10 +1,27 @@
 # install
 ## Linux
 ~~~bash
-wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh
+#!/bin/bash
 
-bash Miniconda3-latest-Linux-x86_64.sh
-source ~/.bashrc
+# Download the Miniconda installer
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+
+# Verify the integrity of the downloaded installer
+sha256sum miniconda.sh
+
+# Compare the output with the SHA256 hash on the Miniconda website to ensure integrity
+
+# Run the Miniconda installer
+bash miniconda.sh -b -p $HOME/miniconda
+
+# Add Miniconda to the PATH
+echo 'export PATH="$HOME/miniconda/bin:$PATH"' >> $HOME/.bashrc
+
+# Refresh the current shell session
+source $HOME/.bashrc
+
+# Test the installation by printing the Conda version
+conda --version
 ~~~
 
 [Ref](https://zhuanlan.zhihu.com/p/489499097)
@@ -39,7 +56,6 @@ envs_dirs:
 
 - 创建环境
 
-conda create -n myenv python=3.9
 conda create -n myenv python=3.9
 
 - 配置环境变量 (否则无法识别cmd)
