@@ -189,7 +189,6 @@ func handle(ctx context.Context, duration time.Duration) {
 
 #### WaitGroup
 
-
 [Go Preemptive Scheduler Design]()
 [GPM模型](https://www.cnblogs.com/X-knight/p/11365929.html)
 [Go 语言设计与实现](https://draveness.me/golang/docs)

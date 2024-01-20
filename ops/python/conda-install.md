@@ -77,7 +77,7 @@ conda create -n myenv scipy=0.15.0
 安装pytorch之后可能会出现一些BUG,可能要考虑是不是channel的BUG  
 channel
 
-Then I found that torchvision should be installed together with pytorch in anaconda.
+torchvision should be installed together with pytorch in anaconda.
 conda install -c pytorch torchvision
 
 #### 与cmd的适配
@@ -95,3 +95,20 @@ pip install -e .
 Is used to install a Python package locally in "editable" mode.
 
 #### 删除env
+
+
+
+**虚拟机配置http_proxy**
+
+~~~
+export http_proxy=1.1.1.1:1234
+export https_proxy=1.1.1.1:1234
+~~~
+
+**python install的区别**
+
+```
+pip install --upgrade pip # for PEP 517
+
+python3 setup.py install 
+```

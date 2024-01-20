@@ -16,6 +16,3 @@ variants: GAT-noG
 
 # P42 pavlo self-driving database system
 	RNN 循环神经网络预测
-
-    关于数据库OLAP,OLTP,是否OLAP跟column-oriented数据库有一定的联系?
-    HTAP是说什么?

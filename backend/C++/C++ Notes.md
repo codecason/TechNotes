@@ -11,6 +11,6 @@ RAII（Resource Acquisition In Initialization） 资源获取即初始化
 - install perf first
 ~~~
 perf record -o my_trace.data <your-command-or-program>
-perf script -i my_trace.data
-perf script -i my_trace.data | stackcollapse-perf.pl | flamegraph.pl > out.svg
+timestamp=$(date +"%Y%m%d%H%M%S")
+perf script -i my_trace.data | stackcollapse-perf.pl | flamegraph.pl > ../${timestamp}.svg
 ~~~
