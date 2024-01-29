@@ -68,3 +68,33 @@ GitHub状态：虽然较少见，但有可能GitHub正在遇到问题。
 
 重新启动：有时简单地重新启动你的计算机和路由器可能会解决问题。
 ```
+
+Git 大文件
+
+~~~
+为什么需要 Git LFS
+如果你在命令行用 git push > 50MB 的文件，你会收到一个 warning，但是你仍然可以正常 push，但是 > 100MB 的时候就无法 push 了。如果你是在浏览器要上传文件的话，这个限制更为严重，不能超过 25MB，这是 Github 对仓库的限制。Git lfs 就是用于解决这个问题1
+
+什么情况下不需要用 Git LFS
+下面几个场景不需要用
+
+文件大小没有超过限制当然就没有必要用了
+如果是要分发二进制文件（比如 *.exe）等，此时直接用 Github 提供的 release 功能就好了
+
+Git LFS 原理
+使用 Git LFS 之后，在仓库中存储的其实是对大文件的引用，可以理解为指针。而真正的大文件托管在 Git Lfs 的服务器上。Github 给不同用户的提供的存储空间不一样，免费用户和 Pro 用户都是 2 GB，而如果是企业用户则会高点2
+
+引用文件长什么样子
+比如官方文档里面提到的例子：
+
+1 version https://git-lfs.github.com/spec/v1
+2 oid sha256:4cac19622fc3ada9c0fdeadb33f88f367b541f38b89102a3f1261ac81fd5bcb5
+3 size 84977953
+
+#### https://martinlwx.github.io/zh-cn/gitlfs/
+debug 方式：python3 -m rknn.bin.visualization
+
+#### 扩容，手动分区
+
+~~~
+
