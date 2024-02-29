@@ -138,3 +138,15 @@ python3 setup.py install
 ```
 
 jupyter
+
+~~~
+subprocess.run的内容是?
+python os.system执行的时候，python如何解释它的包导入机制?为什么会出现no module named
+
+hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+FileNotFoundError: [WinError 2] 系统找不到指定的文件。
+~~~
+
+### conda 创建环境
+conda env create -f env.yaml
+

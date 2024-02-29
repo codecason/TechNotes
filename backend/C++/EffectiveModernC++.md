@@ -472,3 +472,23 @@ Widget makeWidget(); // function
 makeWidget().doWork();  // rvalue call doWork;
 ~~~
 
+
+
+### 实际应用 (2.21-)
+
+#### 1 lambda
+
+#### 2 智能指针
+
+#### 3 模板
+
+#### 4 多线程
+
+#### 5 内存malloc
+
+#### 6 反射
+
+#### 7 STL容器与算法
+
+#### 
+
