@@ -1,5 +1,11 @@
 1.
-	mount -t vboxsf shared_virtualbox ~/comvb/
+
+~~~
+# mount -t vboxsf interface_folder_name <os_folder> 挂载共享文件夹到os_folder
+mount -t vboxsf shared_virtualbox ~/comvb/
+~~~
+
+
 2.
     other operations:shutdown the machine first,modify the settings of the os:
 	settings-shared folder - add fixed allocation(may differ in translation)
@@ -9,7 +15,7 @@
 **Insert CD Image: Unable to insert the virtual optical disk**
 
 	https://blog.csdn.net/Lijingru8/article/details/112664462
-
+	
 	进入主界面，弹出光盘即可，重试
 
 4.
