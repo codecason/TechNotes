@@ -1,4 +1,0 @@
-lseek
-
-fcntl
-
