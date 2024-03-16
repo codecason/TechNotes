@@ -110,6 +110,18 @@ GOPROXY=https://goproxy.cn,direct
         "GOPROXY": "https://goproxy.cn,direct",
         "GO111MODULE": "on",
     }
+
+~~~
+
+参考: [VS CODE 配置远程 Go 开发环境](https://xuqilong.top/pages/3790c9/#配置远程登录)
+
+#### vscode无法解析go
+
+修改 go.mod里go的版本 (?)
+
+~~~
+配置问题
+
 ~~~
 
 
@@ -119,3 +131,4 @@ GOPROXY=https://goproxy.cn,direct
 #### go devle
 
 go get -u github.com/derekparker/delve/cmd/dlv
+
