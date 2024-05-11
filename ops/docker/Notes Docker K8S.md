@@ -58,26 +58,7 @@ Kubenetes
 
 #### 2.kubectl
 
-#### 3.cri-o
-#####　Prerequisites
-~~~shell
-modprobe overlay
-modprobe br_netfilter
 
-# Setup required sysctl params, these persist across reboots.
-cat > /etc/sysctl.d/99-kubernetes-cri.conf <<EOF
-net.bridge.bridge-nf-call-iptables  = 1
-net.ipv4.ip_forward                 = 1
-net.bridge.bridge-nf-call-ip6tables = 1
-EOF
-
-sysctl --system
-~~~
-
-add-apt-repository ppa:projectatomic/ppa
-apt-get update && apt-get install crio-o-1.15
-ln -s /usr/bin/conmon /usr/libexec/crio/conmon
-system-ctl start crio
 
 #### X.containerd
 ~~~shell
@@ -148,6 +129,8 @@ usermod -aG docker $USER
 newgrp docker
 ~~~
 
+
+
 #### Docker 应用遇到的网络问题和配置
 
 
@@ -158,3 +141,48 @@ newgrp docker
 [Kubernetes(一) 跟着官方文档从零搭建K8S](https://juejin.im/post/5d7fb46d5188253264365dcf)  
 [快速创建Kubernetes集群](https://help.aliyun.com/document_detail/85903.html?spm=a2c4g.11174283.4.1.17742ceeQ8XKmy)  
 [aliyun 的Kubernetes源](https://developer.aliyun.com/mirror/kubernetes)
+
+
+
+#### 6.Docker Desktop
+更改Docker数据存放目录避免空间不足
+
+~~~
+DockerDesktopInstaller.exe install --quiet --accept-license `
+	--backend=wsl-2 -always-run-service `
+	--installation-dir=D:<your_dir> `
+	--hyper-v-default-data-root=E:\DockerDesktop\hyper-v-data `
+	--windows-containers-default-data-root=E:\DockerDesktop\windows-containers-data `
+	--wsl-default-data-root=E:\DockerDesktop\wsl-data
+
+# replace the D:<your_dir> to your custom dir
+
+~~~
+
+
+
+#### 7.配置云加速
+
+
+
+~~~shell
+apt update -y
+
+sudo apt install openjdk-8-jdk
+
+wget https://archive.apache.org/dist/spark/spark-2.4.3/spark-2.4.3-bin-hadoop2.7.tgz
+
+~~~
+
+~~~
+在 /etc/docker/daemon.json
+
+{
+  "registry-mirrors": ["https://reg-mirror.qiniu.com"],
+}
+
+#### 
+
+https://www.jianshu.com/p/c60199c261e9
+~~~
+

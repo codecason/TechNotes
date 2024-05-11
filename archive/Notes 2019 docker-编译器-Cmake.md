@@ -37,8 +37,8 @@ ar命令
 ### Docker
 - docker 编译镜像搭建
 1. virtualbox  
-  安装过程网络会断开
-  迁移位置: 设置UUID
+    安装过程网络会断开
+    迁移位置: 设置UUID
 ~~~
     VBoxManage internalcommands sethduuid  "C:\Users\euler\VirtualBox VMs\ubuntu-docker\ubuntu-docker.vdi"  
 ~~~
@@ -78,13 +78,13 @@ ar命令
 5. 安装ssh  
 ~~~shell
       apt-get install openssh-server
-  　　sudo /etc/init.d/ssh resart
+  　　sudo /etc/init.d/ssh restart
 ~~~
 
 6. 安装docker
   - **Docker ubuntu 16.04 安装稳定版本，社区版版本**
       https://www.jianshu.com/p/b3f70bcffe75
-    15.10 安装失败的原因: 各个源中没有对应15.10版本的docker-ce
+	OS 版本 >= 16.04 否则各个源中没有对应版本的docker-ce
     sudo apt-get install apt-transport-https \
                         ca-certificates \
                         software-properties-common
@@ -93,11 +93,11 @@ ar命令
 
 
   -  **查看apt提供的版本**
-  apt-cache madison docker
-  -> output:
+    apt-cache madison docker
+    -> output:
         docker.io | 1.6.2~dfsg1-1ubuntu4 | https://mirrors.ustc.edu.cn/ubuntu-old-releases/ubuntu/ wily/universe amd64 Packages
         docker.io | 1.6.2~dfsg1-1ubuntu4 | https://mirrors.ustc.edu.cn/ubuntu-old-releases/ubuntu/ wily/universe Sources
-  apt-cache stats
+    apt-cache stats
 
 -  6.1 安装完docker后原接口无法上网  
     正确的解决方案难道不是指定 docker0 的IP 地址范围或者监听的时候指定 bind 吗？
@@ -150,7 +150,7 @@ ar命令
   1. SysVinit：/etc/init.d目录；
   1. UpStart： /usr/share/upstart目录；
   1. Systemd：/usr/lib/systemd目录；
-  但是大多数系统上，都会存在多个类似的目录，因此不能简单地根据是否存在相应的配置目录的方式来判断系统的启动方式，这里推荐的方式上是根据init进程号1所对应的可执行文件来判断，如：
+    但是大多数系统上，都会存在多个类似的目录，因此不能简单地根据是否存在相应的配置目录的方式来判断系统的启动方式，这里推荐的方式上是根据init进程号1所对应的可执行文件来判断，如：
 
   systemctl enable docker # 随系统启动  
   作者：发条蛙  
@@ -188,12 +188,13 @@ ar命令
   docker logs
 
   8. **构建centos docker**
-  yum -y install gcc automake autoconf libtool make #安装make
-  yum -y install vim
-  all-> rcc = $Blburg$E -> $Brcc$E::       $Bmain$O $Blibrcc$A $(EXTRAOBJS)
+    yum -y install gcc automake autoconf libtool make #安装make
+    yum -y install vim
+    all-> rcc = $Blburg$E -> $Brcc$E::       $Bmain$O $Blibrcc$A $(EXTRAOBJS)
                 $(LD) $(LDFLAGS) -o $@ $Bmain$O $(EXTRAOBJS) $Blibrcc$A $(EXTRALIBS)
-  -> $Blibrcc$A $(EXTRALIBS) <br>
-  // 查看yum的安装软件版本:
+    -> $Blibrcc$A $(EXTRALIBS) <br>
+    // 查看yum的安装软件版本:
+
     rpm -qa gdb
   // 查看哪个版本提供某个命令行工具:
   yum provides */netstat
@@ -220,13 +221,13 @@ ar命令
   cannot set LC_CTYPE locale to XX #可能是没有安装XX语言包
 
   2.    LC_CTYPE
-  用于字符分类和字符串处理，控制所有字符的处理方式，包括字符编码，字符是单字节还是多字节，如何打印等。是最重要的一个环境变量。
+    用于字符分类和字符串处理，控制所有字符的处理方式，包括字符编码，字符是单字节还是多字节，如何打印等。是最重要的一个环境变量。
 
   7.    LANG
-  LC_*的默认值，是最低级别的设置，如果LC_*没有设置，则使用该值。类似于 LC_ALL。
+    LC_*的默认值，是最低级别的设置，如果LC_*没有设置，则使用该值。类似于 LC_ALL。
 
   8.    LC_ALL
-  它是一个宏，如果该值设置了，则该值会覆盖所有LC_*的设置值。注意，LANG的值不受该宏影响。
+    它是一个宏，如果该值设置了，则该值会覆盖所有LC_*的设置值。注意，LANG的值不受该宏影响。
 
   你可以选择编辑"/etc/sysconfig/i18n"文件, 但是这个文件是作用于所有用户的,这里我们只修改成自己登录时显示中文。
   在终端中输入命令 vim ~/.bashrc 来编辑“.bashrc”文件, 在最后添加export LANG="zh_CN.UTF-8"。
@@ -253,15 +254,6 @@ ar命令
       SOLVED: 修改设置authz,passwd等,注意取消注释**/
 ~~~
 
-#### Error:
-  // Error:
-    E220001:
-  1. squashfs error
-  // downloading
-  Get:17 https://mirrors.ustc.edu.cn wily/stable amd64 Packages [166 B]
-  Err https://mirrors.ustc.edu.cn wily/stable amd64 Packages
-  HttpError404
-
 **Knowledge**:
   5. 字符替换:
       当前行：
@@ -270,16 +262,19 @@ ar命令
       :%s/foo/bar/g
 
   6. 一般添加PPA源是不靠谱的
-  yum apt ppa
+    yum apt ppa
+
     echo "deb https://mirrors4.tuna.tsinghua.edu.cn/docker-ce/" >> <br>
 
   7. **docker容器中查看容器linux版本**
+
     正确：
     cat /etc/issue
     错误:
     cat /proc/version 或 uname -a ，这样查到的是宿主机的系统。
 
   8. 卷相关
+
     LVM 是什么?
     根分区 / 必须总是物理地包含 /etc、/bin、/sbin、/lib 和 /dev，否则您将不能启动系统。典型的根分区需要 150–250MB 大小空间。
 
@@ -306,7 +301,7 @@ ar命令
 
     网盘工具
     https://www.xiaobd.net/t/12799316
-
+    
     Ubuntu通过apt-get安装指定版本和查询指定软件有多少个版本
     https://www.cnblogs.com/EasonJim/p/7144017.html
 
