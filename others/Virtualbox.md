@@ -100,3 +100,10 @@ echo "Script execution completed!"
 无网络环境下安装包
 https://www.cnblogs.com/ddcoder/p/18024804
 ~~~
+
+7.网卡未指定
+
+~~~
+https://www.bilibili.com/video/BV15T411p78F
+VBoxNetLwf.inf
+~~~
