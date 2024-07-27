@@ -186,3 +186,6 @@ wget https://archive.apache.org/dist/spark/spark-2.4.3/spark-2.4.3-bin-hadoop2.7
 https://www.jianshu.com/p/c60199c261e9
 ~~~
 
+[WSL安装教程](https://zhuanlan.zhihu.com/p/386590591?utm_id=0)
+
+打开“控制面板” -> “程序和功能” -> “打开或关闭 Windows 功能”-> 选中“适用于 Linux 的 Windows 子系统”，或使用本文开头所述的 PowerShell cmdlet。

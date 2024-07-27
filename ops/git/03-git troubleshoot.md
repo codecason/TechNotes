@@ -33,3 +33,13 @@ url = https://github.com/username/repo.git
 
 [SSH-RSA key permission deined](https://confluence.atlassian.com/bitbucketserverkb/ssh-rsa-key-rejected-with-message-no-mutual-signature-algorithm-1026057701.html)
 
+
+
+#### 网络不好下载失败
+
+降级解决
+
+~~~
+git config --global http.version HTTP/1.1
+~~~
+

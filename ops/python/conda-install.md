@@ -44,6 +44,14 @@ conda info --envs
 conda create -n myenv python=3.9
 ~~~
 
+~~~
+# 拷贝已经存在的环境
+# 场景：例如在一个实验的四个项目中，可能下载差不多的包，但是不想影响原环境
+conda create --name myenv_clone --clone myenv
+~~~
+
+
+
 ### 删除环境
 
 ~~~
@@ -68,8 +76,6 @@ pkgs_dirs:
 envs_dirs:
   - D:\ProgramData\.conda\envs
 ~~~
-
-- 
 
 - 配置环境变量 (否则无法识别cmd)
 
