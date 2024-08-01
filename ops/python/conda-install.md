@@ -156,3 +156,69 @@ FileNotFoundError: [WinError 2] 系统找不到指定的文件。
 ### conda 创建环境
 conda env create -f env.yaml
 
+## [Python] 查找路径
+
+python -m site可以看到
+
+~~~
+ sys.path = [
+	...
+]
+USER_BASE: ...
+USER_SITE: ...
+ENABLE_USER_SITE: True
+~~~
+
+
+
+## [包管理]Pip 版本冲突案例
+
+~~~
+如何解决包的版本问题？
+场景：
+
+在写kaggle的时候，发现用到了keras_nlp的包；同时它依赖于keras, tensorflow；
+于是随便用本地的环境安装了keras，tensorflow，keras_nlp
+结果import keras_nlp的时候直接出现问题，这三者同时安装无法兼容；
+
+于是知道了keras 2,3的版本迁移，因此安装新项目的时候，keras版本一般要在3以上；
+由于安装tensorflow会卸载已有的keras版本，因此要先装tensorflow再装keras；
+而keras的api还在持续的变化，例如from keras import tree，所以要找到对应的keras版本；
+
+我是怎么找到对应的keras版本的?
+二分法（在[A,B]之间找到对应的可用版本），并且一般是cannot import是因为版本不够新（除非是tensorflow这样的乱删旧API），用此思路找到一个最新的版本；
+
+即使这样，keras_nlp -> keras -> tensorflow的依赖，还未知tensorflow的版本；
+看keras_nlp的文档推荐，tensorflow >= 版本A；因此按照 pip install tensorflow -> keras（为什么？因为tensorflow会删版本）的顺序试验tensorflow的版本；之后重新安装keras_nlp，就完成了；
+
+总结：
+conda 可能会没有收录一些pip的库，例如keras_nlp;
+1.希望pip有这样一种版本选项，pip check <已知包==已知版本> <other包1> <other包2>
+	给出对应的兼容性版本；
+2.或者给定三个包，能够直接给出范围内的兼容性列表；
+
+另外有已知的pip freeze | findstr 
+
+另外，有其他的包版本管理的工具，太多了，不一一列举
+
+~~~
+
+
+
+pip的其他选项
+
+~~~
+[no-deps]:
+pip install --no-deps tensorflow 可以不删除keras
+
+~~~
+
+查询可用的版本
+
+~~~
+# 一个小trick
+pip install tensorflow==
+会报错给出可用的版本
+
+~~~
+
