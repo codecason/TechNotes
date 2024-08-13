@@ -222,3 +222,13 @@ pip install tensorflow==
 
 ~~~
 
+#### pip conflict查看
+
+~~~
+pip install pipdeptree
+pipdeptree
+
+~~~
+
+### [Advanced ] PEP Standard
+
