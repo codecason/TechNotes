@@ -66,12 +66,6 @@
 
 ---
 
-## 🌐 Frontend
-
-[Vue + React 技术栈](./frontend/3-vue+react的堆栈.md) · [CSS 盒模型·定位·Flex](./frontend/css-盒模型-行高-定位-浮动-flex.md) · [JS/React 学习笔记](./frontend/js-react-learning%20notes.md) · [Redux/Flux/Dva](./frontend/redux+flux+dva%20model%20learning.md) · [前端学习路线](./frontend/frontend-learning.md)
-
----
-
 ## ⚙️ Backend
 
 <div align="center">
@@ -84,33 +78,11 @@
 
 </div>
 
-| Language / Area | Key Notes |
-|:----------------|:----------|
-| **C++** | [C++ Notes](./backend/C++/C++%20Notes.md) · [Effective Modern C++](./backend/C++/EffectiveModernC++.md) · [C++20 Features](./backend/C++/CppCon%20Cpp20.md) · [Boost 库](./backend/C++/Boost库.md) · [C++ 并发](./backend/Cpp并发.md) |
-| **Golang** | [Go Notes](./backend/Golang/go-notes.md) · [GoLand 插件](./backend/Golang/goland安装插件.md) |
-| **Java** | [Java 并发](./backend/java/02%20java-concurrency.md) · [Design Pattern](./backend/java/design%20pattern%20lab.md) · [Spring Practice](./backend/java/spring-java-practice.md) · [Scala Spark](./backend/java/scala%20spark.md) |
-| **Database** | [MySQL 实战](./backend/database/geektime-mysql.md) · [MySQL 技术知识](./backend/database/mysql技术知识.md) · [PostgreSQL](./backend/database/postgresql.md) · [SQL 基础](./backend/database/sql.md) |
-| **Network** | [HTTP 鉴权·网关](./backend/network/http业务常识-鉴权-网关和header.md) · [网络基础](./backend/network/网络basic-notes.md) |
-| **Blockchain** | [Blockchain](./backend/blockchain/) |
-| **Compiler** | [ANTLR](./backend/compiler-antlr.md) |
-
----
-
-## ☁️ Cloud · Docker · Kubernetes
-
-[Learning Notes K8S](./cloud+docker/Learning%20Notes%20K8S.md) · [K8S 进阶 - Operator](./cloud+docker/Advanced%20K8S-Operator.md) · [CKA 认证](./cloud+docker/K8S-CKA认证.md) · [Kubernetes in Kubernetes](./cloud+docker/02-kubernetes%20in%20kubernetes.md) · [Helm & Cert-Manager](./cloud+docker/cert-manager/) · [kubectl 速查](./cloud+docker/kubectl-notes.md) · [Docker Compose](./cloud+docker/docker-compose/) · [OpenStack](./cloud+docker/Notes-OpenStack.md) · [HTTP 权威指南](./cloud+docker/Notes-Http%20权威指南+性能权威指南.md) · [Unix 网络编程](./cloud+docker/unix网络编程笔记.md) · [阿里云原生笔记](./cloud+docker/阿里云原生笔记.md)
-
 ---
 
 ## 🏗️ System Design
 
-[数据密集型应用 (DDIA)](./system-design/Learning%20Notes-Data%20Intensive%20Model.md) · [TiKV](./system-design/TiKV.md) · [大数据学习笔记](./system-design/big-data-learning-notes.md) · [MySQL 内核月报](./system-design/mysql-内核月报笔记.md) · [Redis 分布式锁](./system-design/redis分布式锁.md) · [分布式系统 FAQ](./system-design/分布式系统FAQ.md) · [微服务 FAQ](./system-design/微服务FAQ.md) · [PlantUML](./system-design/plantUML.md)
-
----
-
-## 🔧 DevOps & Tools
-
-[QA 速查](./ops/01-QA.md) · [Docker 运维](./ops/docker/) · [Nginx](./ops/nginx/) · [Git 笔记](./ops/git/) · [Debug 工具集](./ops/debug-tools/) · [代码扫描](./ops/code-scan/) · [安装指南](./ops/installation/) · [Linux/Windows 网络排查](./ops/06%20网络问题排查.md) · [SSH 端口转发](./ops/04-本地端口转发远程ssh机器上的服务.md) · [WSL 命令](./ops/09%20wsl-command.md) · [程序员生产工具](./程序员生产工具.md)
+[数据密集型应用 (DDIA)](./system-design/Learning%20Notes-Data%20Intensive%20Model.md) · [TiKV](./system-design/TiKV.md) · [大数据学习笔记](./system-design/big-data-learning-notes.md)
 
 ---
 
@@ -134,14 +106,7 @@
 
 ## 🗂️ Blogs & Essays
 
-[技术博客合集](./blogs/blogs.md) · [云原生博客](./blogs/cloud-blogs.md) · [后端工作方向](./blogs/后端工作方向.md) · [微服务常见问题](./blogs/微服务常见问题.md) · [论文阅读笔记](./essay_reading_notes.md)
-
----
-
-## 📦 Archive & Others
-
-- **Archive** — [Qt 笔记](./archive/Notes%202019%20Qt.md) · [Docker/编译器/CMake](./archive/Notes%202019%20docker-编译器-Cmake.md) · [中间件](./archive/Notes%202019.6-middle-ware.md) · [Redis 设计与实现](./archive/Notes%20redis设计与实现.md) · [Muduo 网络库](./archive/Notes-Muduo.md) · [Lua 笔记](./archive/lua%20笔记.md)
-- **Others** — [树莓派](./others/Learning%20Notes%202019.5-raspberry.md) · [VirtualBox](./others/Virtualbox.md)  [软件工程 - 构建之法](./others/engineering/构建之法.md)
+[技术博客合集](./blogs/blogs.md) · [构建之法](论文阅读笔记/构建之法.md)
 
 ---
 
