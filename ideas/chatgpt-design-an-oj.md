@@ -1,5 +1,4 @@
-1. **
-   Judging Mechanism:**
+1. **Judging Mechanism:**
    - **Sandboxing:** Develop a secure sandbox environment to execute user-submitted code. This involves restricting access to system resources to prevent malicious activities. Tools like Docker can be helpful in creating isolated environments.
    - **Resource Limitations:** Implement mechanisms to enforce resource limitations on submissions, such as execution time, memory usage, and file access.
    - **Output Comparison:** Develop a robust system for comparing the output of user submissions with the expected output, considering factors like whitespace and precision.

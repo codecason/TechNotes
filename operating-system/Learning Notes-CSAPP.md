@@ -16,7 +16,6 @@ Three controls hazards: Read after write(RAW, so are the next), WAW, WAR
 	process
 	virtual memory
 	virtual machine
-	
 #### 1.10 Summary
 
 ### CH2. Representing and Manipulating Information
@@ -75,8 +74,8 @@ SEQ流程,但不是每个指令都需要走所有步骤
     [柚子小站](https://conyli.cc/archives/2926)
 ~~~
 
-![CPU flow](fig1.png)
-![CPU flow](fig2.png)
+![CPU flow](../cloud+docker/fig1.png)
+![CPU flow](../cloud+docker/fig2.png)
 
 - HCL
 - Y86-64指令:
