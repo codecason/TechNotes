@@ -94,7 +94,55 @@ Git LFS 原理
 #### https://martinlwx.github.io/zh-cn/gitlfs/
 debug 方式：python3 -m rknn.bin.visualization
 
-#### 扩容，手动分区
 
 ~~~
 
+
+
+
+
+### git check-ignore
+
+**1. 基本用法：快速检查文件是否被忽略**
+
+最直接的使用方式，如果文件被忽略，会输出该文件的路径；如果没有输出，则表示该文件**未被忽略**。
+
+bash
+
+```
+# 检查 temp.log 是否被忽略
+git check-ignore temp.log
+```
+
+
+
+**2. 详细模式 (`-v`)：找出“幕后黑手”**
+
+加上 `-v` 参数后，如果文件被忽略，会输出非常详细的规则来源信息，格式为 `<规则来源文件>:<行号>:<规则模式> <文件路径>`。
+
+bash
+
+```
+# 详细显示是哪个规则导致了 temp.log 被忽略
+git check-ignore -v temp.log
+# 输出示例: .gitignore:1:*.log temp.log
+```
+
+
+
+这个输出直接告诉你，是根目录下 `.gitignore` 文件的第1行的 `*.log` 规则忽略了 `temp.log` 文件。
+
+**3. 批量检查多个文件**
+
+可以一次性传入多个文件路径进行检查。
+
+bash
+
+```
+# 同时检查多个文件
+git check-ignore -v temp.log error.log config.ini
+```
+
+
+
+这会逐一显示这些文件的忽略状态及对应规则。
