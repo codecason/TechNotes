@@ -820,3 +820,149 @@ BRDF 各向异性的公式（例如水平和竖直方向的变化规律不同；
 
 
 一个数据集：Tabular Representation
+
+
+
+#### 2026.6.25 Lecture 18 Advanced Topics in Rendering
+
+（HW7 Released）
+
+高级光线传播和材质
+
+FYI
+
+- 无偏
+- - 没有**系统误差**的估计技巧称为无偏
+- 一致
+
+- - 有系统误差但是可以收敛称为consistent
+
+无偏Monte Carlo估计
+
+**技巧**
+
+1.BDPT
+
+2.MLT（Metropolis 光线传播），MCMC；适用于specular diffuse specular（反光路径）
+
+问题：无法估计收敛步数；可能产生噪声；
+
+3.Photon Mapping 光子映射
+
+适合渲染caustics
+
+找到一个点周围最近的N个光子；
+
+4.
+
+Vertex Connection and Merging
+
+sub-paths in BDPT
+
+5.Instant Radiosity(IR)
+
+Virtual Point Light(VPL)
+
+**Instant Radiosity（IR）** 是一种用于模拟**全局光照**的渲染方法，核心思想是：把场景中“被光照亮的表面点”当成新的小光源，用这些小光源继续照亮其他物体。
+
+**Virtual Point Light（VPL）** 是 IR 里最关键的概念，意思是**虚拟点光源**。
+
+不适用于glossy的问题；
+
+
+
+##### Advanced Appearance Modeling
+
+云雾、流体、头发
+
+头发：Marschner Model；
+
+glass-like模型；R（入射），TT（折射），TRT（入射后反射）
+
+- medulla（髓质）；cortex；cortex，cuticle，cylinder；
+
+
+
+2.Granular Material: 颗粒材质
+
+3.Transparent Material 和 Translucent Material的区别
+
+4.Subsurface Reflection
+
+BSSRDF：Dipole Approximation（大理石表面）
+
+5.Cloth
+
+渲染方式：空间分割（而不是BRDF)
+
+
+
+6.Microface BRDF：
+
+微表面模型（微型镜面）
+
+7.Wave Optics
+
+isotropic，brushed，scratched 波动光学
+
+（MacBook后盖）
+
+
+
+8.Procedural Material
+
+程序化生成材质（Houdini）
+
+
+
+#### 2026.6.26 Lectures 19
+
+1.Pinhole Image Formation 小孔成像
+
+针孔摄像机
+
+2.FOV Field of View 视场
+
+Focal Length（镜头到底片）
+
+3.Exposure H = T x E
+
+曝光
+
+时间：快门
+
+Aperture size：光圈大小；F-stop
+
+Iris Control：光圈控制器
+
+Shutter speed：快门延迟
+
+ISO Gain：感光度（后期处理系数）
+
+1）单独放大感光度会放大噪声；
+
+2）motion blur 运动模糊；
+
+3）rolling shutter;
+
+4）对于运动物体，景深和运动模糊不可同时解决
+
+4.High-Speed Photography
+
+5.Low-Exposure Photography 延时摄影
+
+
+
+6.Lens Elements Aberrations
+
+Ideal Thin Lens
+
+7.Gauss Ray Tracing Construction
+
+焦距，物距，像距的关系
+$$
+\frac{1}{f} = \frac{1}{z_i} + \frac{1}{z_o}
+$$
+8.Circle of Confusion 跟模糊的关系（弥散圈）
+
+9.景深：场景中的某个深度范围，在CoC小的范围内可以得到清晰的图像
