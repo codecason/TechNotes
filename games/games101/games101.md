@@ -966,3 +966,101 @@ $$
 8.Circle of Confusion 跟模糊的关系（弥散圈）
 
 9.景深：场景中的某个深度范围，在CoC小的范围内可以得到清晰的图像
+
+
+
+
+
+#### 2026.7.1 Lectures 20 Color and Perception
+
+Light Field/Lumigraph
+
+光场
+
+The Plenoptic Function 全光函数
+
+​	全息电影
+
+（七维度：三个角度，三个坐标，一个时间）
+
+**Holographic Movie:** 全息电影
+
+**Fly's Eye Lenslets**:
+
+- 空间多路光场捕捉，对应的原理：radiance
+
+⭐ **Lytro Light Field Camera**: 光场照相机
+
+- 光场 Ren Ng
+- 跟普通相机的区别：原本一个像素只记录一个光；现在一个像素可以记录多个像素；
+
+microlens：微透镜；
+
+- 缺陷：分辨率不足，成本高；空间分辨率；工艺极繁琐；
+
+- 优势：可以先拍照、后对焦。这使它捕捉到的不是一张普通二维照片，而是一张包含光线方向和位置信息的“四维光场图”，为后期处理提供了极大灵活性。
+
+
+
+##### Spectrum 光谱 of Light
+
+Oscillations of different frequencies
+
+更加严谨的定义：spectral power distribution (SPD)
+
+daylight spectral power distributions vary
+
+
+
+##### 眼球
+
+pupil
+
+cornea
+
+cilliary body
+
+rod cells
+
+retinal photoreceptor cells: 感光细胞
+
+rods棒状细胞 + cone锥形细胞（少）
+
+
+
+##### 颜色系统
+
+Tristimulus Theory of Color
+
+Metamerism 同色异谱
+
+Additive Color Matching 加色系统
+
+- 根据加色系统混合得到的颜色可能无法得到参考的颜色，此时可以增加减色方式（CMY,CMYK)
+
+- 但是根据RGB的图（XY轴），为什么不能混合？因为RGB图中的系数可以是负的，而加色系统的系数是正的，其实并没有矛盾
+
+##### 1.standardized RGB(sRGB)
+
+sRGB系统：实验测出来的颜色匹配系统；（一个波长的X坐标颜色是根据哪三种颜色混合的）
+
+gamut 色域
+
+##### 2.A Universal Color Space: CIE Space
+
+Y = luminance = 亮度
+
+- Separating Luminance，Chromaticity = 2D 可视化 = 固定Y = x, y为轴坐标
+
+##### 3.HSV Color Space（Hue-Saturation-Value)
+
+Value=Lightness=Y
+
+Hue=色调
+
+##### 4.CIELAB Space
+
+5.CMYK
+
+CMYK = Cyan, Magenta, Yellow and Key
+
