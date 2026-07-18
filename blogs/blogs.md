@@ -3,6 +3,11 @@
 [科学空间|Scientific Spaces](https://spaces.ac.cn/)  
 [Zhilin Yang's Home Page](http://kimiyoung.github.io/)  
 [Yuxins Blog](http://ppwwyyxx.com/)    
+[Andrej Karpathy](https://karpathy.ai/)    
+[Apple Machine Learning](https://machinelearning.apple.com/research)    
+[Anthropic Engineering](https://www.anthropic.com/engineering)    
+[Anthropic Research](https://www.anthropic.com/resesarch)    
+[Lilian Weng](https://lilianweng.github.io/)    
 
 **影响力大**  
 [阮一峰](http://www.ruanyifeng.com/blog)  
@@ -38,6 +43,10 @@
 [NGINX入门到精通](http://tengine.taobao.org/book/index.html)  
 [Python爬虫学习系列教程|静觅](http://cuiqingcai.com/1052.html)    
 
+
+
+https://www.ben-air.cn/
+
 **已失效**  
 [技术类博客网站推荐-简书](http://www.jianshu.com/p/ca676b17603e)  
 [李健弘 about me | OMeGaGa](http://omegaga.net/about)  
@@ -46,3 +55,6 @@
 [折腾范儿o味精](https://awhisper.github.io/page/2/)  
 [瓜园耕读-田园将芜胡不归](http://www.2gua.info/?page=3)  
 [wei Jin(DL)](http://withwsf.github.io/)    
+
+
+
